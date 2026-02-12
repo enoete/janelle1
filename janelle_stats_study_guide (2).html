@@ -1,0 +1,2947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Janelle's Stats Success Guide 📊✈️🚢</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+
+        .nav-tabs {
+            display: flex;
+            background: #f8f9fa;
+            border-bottom: 3px solid #667eea;
+            overflow-x: auto;
+        }
+
+        .nav-tab {
+            padding: 20px 30px;
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #666;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        .nav-tab:hover {
+            background: #e9ecef;
+            color: #667eea;
+        }
+
+        .nav-tab.active {
+            background: white;
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            margin-bottom: -3px;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .module {
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .module h2 {
+            color: #2d3748;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .module h3 {
+            color: #4a5568;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .concept-box {
+            background: white;
+            border-left: 5px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .analogy-box {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            color: #2d3748;
+        }
+
+        .analogy-box h4 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            color: #1a202c;
+        }
+
+        .example-box {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .example-box h4 {
+            color: #2d3748;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .formula {
+            background: #2d3748;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+
+        .step-list {
+            counter-reset: step-counter;
+            list-style: none;
+            padding: 0;
+        }
+
+        .step-list li {
+            counter-increment: step-counter;
+            margin: 15px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            position: relative;
+            padding-left: 60px;
+        }
+
+        .step-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .important {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .tip {
+            background: #d1ecf1;
+            border-left: 5px solid #17a2b8;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .jasp-screenshot {
+            background: #f8f9fa;
+            border: 2px solid #dee2e6;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        .highlight {
+            background: #ffeaa7;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+
+        .emoji {
+            font-size: 1.5em;
+        }
+
+        .progress-tracker {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .checkpoint {
+            margin: 15px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .checkpoint:hover {
+            background: #e9ecef;
+            transform: translateX(5px);
+        }
+
+        .checkpoint input[type="checkbox"] {
+            margin-right: 10px;
+            transform: scale(1.5);
+            cursor: pointer;
+        }
+
+        /* Quiz Styles */
+        .quiz-question {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .quiz-options {
+            margin: 15px 0;
+        }
+
+        .quiz-option {
+            background: #f8f9fa;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .quiz-option:hover {
+            background: #e9ecef;
+            border-color: #667eea;
+        }
+
+        .quiz-option input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.3);
+            cursor: pointer;
+        }
+
+        .quiz-option label {
+            cursor: pointer;
+            display: block;
+        }
+
+        .quiz-input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            font-size: 1em;
+            margin-top: 10px;
+        }
+
+        .quiz-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .check-answer-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 15px 10px 15px 0;
+            transition: transform 0.2s;
+        }
+
+        .check-answer-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .check-answer-btn:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
+            transform: none;
+            opacity: 0.6;
+        }
+
+        .quiz-option.correct {
+            background: #d4edda !important;
+            border-color: #28a745 !important;
+        }
+
+        .quiz-option.incorrect {
+            background: #f8d7da !important;
+            border-color: #dc3545 !important;
+        }
+
+        .feedback {
+            margin-top: 15px;
+            padding: 15px 20px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1.05em;
+            line-height: 1.6;
+            display: none;
+        }
+
+        .feedback.correct {
+            background: #d4edda;
+            color: #155724;
+            border: 2px solid #28a745;
+            display: block;
+        }
+
+        .feedback.incorrect {
+            background: #f8d7da;
+            color: #721c24;
+            border: 2px solid #dc3545;
+            display: block;
+        }
+
+        .quiz-score {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 30px 0;
+            display: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .quiz-score.show {
+            display: block;
+        }
+
+        .reset-quiz-btn, .show-answers-btn {
+            border: none;
+            padding: 15px 40px;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: 700;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s;
+        }
+
+        .reset-quiz-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .show-answers-btn {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            color: #2d3748;
+        }
+
+        .reset-quiz-btn:hover, .show-answers-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .submit-quiz-btn {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 10px;
+            font-size: 1.2em;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: transform 0.2s;
+        }
+
+        .submit-quiz-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(245, 87, 108, 0.4);
+        }
+
+        .feedback {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            display: none;
+        }
+
+        .feedback.correct {
+            background: #d4edda;
+            border: 2px solid #28a745;
+            color: #155724;
+            display: block;
+        }
+
+        .feedback.incorrect {
+            background: #f8d7da;
+            border: 2px solid #dc3545;
+            color: #721c24;
+            display: block;
+        }
+
+        .feedback.partial {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            color: #856404;
+            display: block;
+        }
+
+        .score-display {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+            display: none;
+        }
+
+        .score-display.show {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        .score-display h3 {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        .score-number {
+            font-size: 4em;
+            font-weight: 700;
+            color: #667eea;
+            margin: 20px 0;
+        }
+
+        .reset-quiz-btn {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .reset-quiz-btn:hover {
+            background: #5a6268;
+        }
+
+        .footer {
+            background: #2d3748;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .nav-tabs {
+                flex-direction: column;
+            }
+            
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Janelle's Stats Success Guide ✈️🚢</h1>
+            <p>Making Statistics Fun & Easy - SCASPA Style!</p>
+            <p style="font-size: 0.9em; margin-top: 10px;">Specially designed for ambitious HR professionals conquering Psychology! 💪</p>
+        </div>
+
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="showSection('intro')">🏠 Start Here</button>
+            <button class="nav-tab" onclick="showSection('basics')">📚 Stats Basics</button>
+            <button class="nav-tab" onclick="showSection('hypothesis')">🔬 Hypothesis Testing</button>
+            <button class="nav-tab" onclick="showSection('ttests')">📊 T-Tests</button>
+            <button class="nav-tab" onclick="showSection('chi-square')">✖️ Chi-Square</button>
+            <button class="nav-tab" onclick="showSection('jasp')">💻 JASP Lab</button>
+            <button class="nav-tab" onclick="showSection('quiz')">✅ Quiz Time!</button>
+            <button class="nav-tab" onclick="showSection('homework')">📝 Your Assignment</button>
+        </div>
+
+        <div class="content">
+            <!-- INTRO SECTION -->
+            <div id="intro" class="section active">
+                <div class="module">
+                    <h2>Welcome, Janelle! 🌟</h2>
+                    <p style="font-size: 1.2em; margin-bottom: 20px;">Hey there, superstar! You're about to conquer statistics, and I'm going to make it as easy as checking if a flight is on time at RLB International Airport! 🎉</p>
+
+                    <div class="analogy-box">
+                        <h4>🎯 Why This Guide is Different</h4>
+                        <p>Think of this guide as your personal HR manager for learning stats - it organizes everything, breaks it down into manageable tasks, and uses examples from YOUR world at SCASPA. No boring textbook examples here!</p>
+                    </div>
+
+                    <div class="progress-tracker">
+                        <h3 style="margin-bottom: 20px;">📋 Your Learning Checklist</h3>
+                        <div class="checkpoint">
+                            <input type="checkbox" id="check1"> 
+                            <label for="check1">Understand the basics of hypothesis testing</label>
+                        </div>
+                        <div class="checkpoint">
+                            <input type="checkbox" id="check2">
+                            <label for="check2">Master t-tests (paired and independent)</label>
+                        </div>
+                        <div class="checkpoint">
+                            <input type="checkbox" id="check3">
+                            <label for="check3">Learn confidence intervals</label>
+                        </div>
+                        <div class="checkpoint">
+                            <input type="checkbox" id="check4">
+                            <label for="check4">Understand chi-square tests</label>
+                        </div>
+                        <div class="checkpoint">
+                            <input type="checkbox" id="check5">
+                            <label for="check5">Complete Question 1 (St. Georges vs Grenville)</label>
+                        </div>
+                        <div class="checkpoint">
+                            <input type="checkbox" id="check6">
+                            <label for="check6">Complete Question 2 (SAT scores)</label>
+                        </div>
+                        <div class="checkpoint">
+                            <input type="checkbox" id="check7">
+                            <label for="check7">Complete Question 3 (Smoking habits)</label>
+                        </div>
+                        <div class="checkpoint">
+                            <input type="checkbox" id="check8">
+                            <label for="check8">Complete Question 4 (Cheesecake sweetness)</label>
+                        </div>
+                        <div class="checkpoint">
+                            <input type="checkbox" id="check9">
+                            <label for="check9">Master JASP software</label>
+                        </div>
+                        <div class="checkpoint">
+                            <input type="checkbox" id="check10">
+                            <label for="check10">Ace the quiz!</label>
+                        </div>
+                    </div>
+
+                    <div class="important">
+                        <h4>⚡ Quick Start Instructions</h4>
+                        <ol>
+                            <li>Start with "Stats Basics" to build your foundation</li>
+                            <li>Move through each tab in order</li>
+                            <li>Try the SCASPA examples - they'll make everything click!</li>
+                            <li>Use the "Your Assignment" section to connect concepts to your homework</li>
+                            <li>Complete the JASP Lab before tackling your assignment</li>
+                            <li>Check off items as you master them!</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STATS BASICS SECTION -->
+            <div id="basics" class="section">
+                <div class="module">
+                    <h2>📚 Statistics Basics - The Foundation</h2>
+                    
+                    <div class="analogy-box">
+                        <h4>🎭 The Big Picture: What IS Statistics?</h4>
+                        <p><strong>Imagine you're Tyler's teacher</strong> and you want to know if kids who eat breakfast perform better in school. You can't test EVERY kid in the world, so you test a sample (like Tyler's class) and use statistics to make educated guesses about ALL kids.</p>
+                        <p style="margin-top: 15px;">That's statistics in a nutshell: <strong>Using samples to understand populations!</strong></p>
+                    </div>
+
+                    <h3>🔑 Key Terms (SCASPA Edition)</h3>
+                    
+                    <div class="concept-box">
+                        <h4>Population vs. Sample</h4>
+                        <p><strong>Population:</strong> ALL possible subjects (e.g., every passenger who's ever flown through RLB Airport)</p>
+                        <p><strong>Sample:</strong> A subset you actually measure (e.g., 100 passengers surveyed last week)</p>
+                        <p style="margin-top: 10px;"><em>SCASPA Example:</em> If you want to measure employee satisfaction at SCASPA, you might survey 50 employees (sample) to understand all 200+ employees (population).</p>
+                    </div>
+
+                    <div class="concept-box">
+                        <h4>Mean (Average) - Your Best Friend</h4>
+                        <p>Add up all values and divide by how many there are.</p>
+                        <div class="formula">
+                            Mean = (Sum of all values) / (Number of values)
+                            <br>μ (mu) = population mean
+                            <br>x̄ (x-bar) = sample mean
+                        </div>
+                        <p><em>SCASPA Example:</em> If ships arriving at Port Zante took 20, 25, 30, 25, and 30 minutes to dock, the mean docking time = (20+25+30+25+30)/5 = 26 minutes</p>
+                    </div>
+
+                    <div class="concept-box">
+                        <h4>Standard Deviation - How Spread Out Things Are</h4>
+                        <p>Standard deviation (SD) tells you how much variation exists from the average.</p>
+                        <div class="analogy-box">
+                            <h4>🚢 Port Analogy</h4>
+                            <p><strong>Low SD:</strong> Cruise ships arrive consistently around 8 AM (predictable!)</p>
+                            <p><strong>High SD:</strong> Ships arrive anywhere from 6 AM to 2 PM (chaos!)</p>
+                        </div>
+                        <p style="margin-top: 15px;"><strong>Why it matters:</strong> Low SD = consistent/reliable. High SD = lots of variability.</p>
+                    </div>
+
+                    <div class="concept-box">
+                        <h4>P-Value - The Superstar of Statistics! ⭐</h4>
+                        <p>The p-value answers: <strong>"What's the probability this result happened by pure chance?"</strong></p>
+                        
+                        <div class="example-box">
+                            <h4>🎲 Tyler's Coin Flip</h4>
+                            <p>Tyler flips a coin 10 times and gets 9 heads. Is the coin fair or rigged?</p>
+                            <ul style="margin-top: 10px;">
+                                <li><strong>Small p-value (< 0.05):</strong> "Whoa! That's SUPER unlikely to happen by chance! The coin might be rigged!" 🤔</li>
+                                <li><strong>Large p-value (> 0.05):</strong> "Eh, could happen. Nothing suspicious here." 😊</li>
+                            </ul>
+                        </div>
+
+                        <div class="important">
+                            <h4>🎯 The Magic Number: 0.05</h4>
+                            <p><strong>If p-value < 0.05:</strong> Result is "statistically significant" (probably NOT due to chance!)</p>
+                            <p><strong>If p-value > 0.05:</strong> Result might just be random luck (not significant)</p>
+                            <p style="margin-top: 10px;"><em>SCASPA Example:</em> You test if a new customs procedure reduces wait times. If p < 0.05, you can confidently say "Yes! This new procedure REALLY works!"</p>
+                        </div>
+                    </div>
+
+                    <div class="concept-box">
+                        <h4>Significance Level (α - Alpha)</h4>
+                        <p>This is your "pickiness level" - how sure you want to be before saying something is real.</p>
+                        <table>
+                            <tr>
+                                <th>Alpha Level</th>
+                                <th>Meaning</th>
+                                <th>When to Use</th>
+                            </tr>
+                            <tr>
+                                <td>α = 0.01 (1%)</td>
+                                <td>VERY picky - 99% confident</td>
+                                <td>Medical research, safety critical decisions</td>
+                            </tr>
+                            <tr>
+                                <td>α = 0.05 (5%)</td>
+                                <td>Standard pickiness - 95% confident</td>
+                                <td>Most research (including your homework!)</td>
+                            </tr>
+                            <tr>
+                                <td>α = 0.10 (10%)</td>
+                                <td>Less picky - 90% confident</td>
+                                <td>Exploratory research</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HYPOTHESIS TESTING SECTION -->
+            <div id="hypothesis" class="section">
+                <div class="module">
+                    <h2>🔬 Hypothesis Testing - The Detective Work</h2>
+                    
+                    <div class="analogy-box">
+                        <h4>🕵️‍♀️ Think Like a Detective (or HR Professional!)</h4>
+                        <p>You're investigating whether a new HR policy works. You start by assuming it DOESN'T work (null hypothesis), then look for evidence to prove otherwise. Just like in court: "innocent until proven guilty!"</p>
+                    </div>
+
+                    <h3>The Two Hypotheses</h3>
+
+                    <div class="concept-box">
+                        <h4>1. Null Hypothesis (H₀) - "Nothing Special Here"</h4>
+                        <p>This says there's NO difference, NO effect, NO change. Everything is boring and normal!</p>
+                        <div class="example-box">
+                            <h4>✈️ SCASPA Example: Flight Delays</h4>
+                            <p><strong>H₀:</strong> The new check-in system does NOT reduce passenger wait times.</p>
+                            <p style="margin-top: 10px;"><em>Translation:</em> "The new system doesn't do anything special. Wait times are the same as before."</p>
+                        </div>
+                    </div>
+
+                    <div class="concept-box">
+                        <h4>2. Alternative Hypothesis (H₁ or Hₐ) - "Something IS Happening!"</h4>
+                        <p>This says there IS a difference, IS an effect, IS a change!</p>
+                        <div class="example-box">
+                            <h4>✈️ SCASPA Example: Flight Delays</h4>
+                            <p><strong>H₁:</strong> The new check-in system DOES reduce passenger wait times.</p>
+                            <p style="margin-top: 10px;"><em>Translation:</em> "The new system actually works! Wait times are shorter!"</p>
+                        </div>
+
+                        <div class="tip">
+                            <h4>📝 Three Types of Alternative Hypotheses</h4>
+                            <ol>
+                                <li><strong>Two-tailed (≠):</strong> "There's a difference, but I don't know which direction"<br>
+                                Example: H₁: μ₁ ≠ μ₂ (wait times are different, could be higher OR lower)</li>
+                                <li><strong>Left-tailed (<):</strong> "It's LESS than"<br>
+                                Example: H₁: μ < 1200 (expenditure is LESS than 1200)</li>
+                                <li><strong>Right-tailed (>):</strong> "It's GREATER than"<br>
+                                Example: H₁: μ > 950 (SAT score is GREATER than 950)</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <h3>🎯 The Hypothesis Testing Process</h3>
+
+                    <ol class="step-list">
+                        <li><strong>State your hypotheses</strong><br>
+                        Write down H₀ (the boring "nothing's happening" statement) and H₁ (what you think is happening)</li>
+                        
+                        <li><strong>Choose your significance level (α)</strong><br>
+                        Usually 0.05 (5%), sometimes 0.01 (1%) or 0.10 (10%) - this tells you how picky you want to be</li>
+                        
+                        <li><strong>Collect and analyze your data</strong><br>
+                        Calculate your test statistic (t-value, chi-square value, etc.)</li>
+                        
+                        <li><strong>Find the p-value</strong><br>
+                        This is what JASP will calculate for you! 🎉</li>
+                        
+                        <li><strong>Make your decision</strong><br>
+                        • If p-value < α: REJECT H₀ (something IS happening!)<br>
+                        • If p-value ≥ α: FAIL TO REJECT H₀ (not enough evidence)</li>
+                        
+                        <li><strong>State your conclusion in plain English</strong><br>
+                        Tell the story of what you found!</li>
+                    </ol>
+
+                    <div class="example-box">
+                        <h4>🚢 Complete SCASPA Example: Port Security Wait Times</h4>
+                        <p><strong>Scenario:</strong> You're testing if a new security screening process at Port Zante reduces wait times. The old average was 15 minutes.</p>
+                        
+                        <p style="margin-top: 15px;"><strong>Step 1 - Hypotheses:</strong></p>
+                        <ul>
+                            <li>H₀: μ = 15 (new system doesn't change wait time)</li>
+                            <li>H₁: μ < 15 (new system REDUCES wait time)</li>
+                        </ul>
+
+                        <p style="margin-top: 15px;"><strong>Step 2 - Significance level:</strong> α = 0.05</p>
+
+                        <p style="margin-top: 15px;"><strong>Step 3 - Data:</strong> You test 30 passengers, average wait = 12.5 minutes</p>
+
+                        <p style="margin-top: 15px;"><strong>Step 4 - Analysis:</strong> Run test in JASP → p-value = 0.023</p>
+
+                        <p style="margin-top: 15px;"><strong>Step 5 - Decision:</strong> 0.023 < 0.05, so REJECT H₀! ✅</p>
+
+                        <p style="margin-top: 15px;"><strong>Step 6 - Conclusion:</strong> "There is sufficient evidence at the 5% significance level to conclude that the new security screening process reduces wait times at Port Zante. The new system works!"</p>
+                    </div>
+
+                    <div class="important">
+                        <h4>⚠️ Common Mistakes to Avoid</h4>
+                        <ul>
+                            <li>❌ DON'T say "accept H₀" → ✅ Say "fail to reject H₀"</li>
+                            <li>❌ DON'T say "prove" → ✅ Say "sufficient evidence"</li>
+                            <li>❌ DON'T forget to relate back to the real-world context!</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- T-TESTS SECTION -->
+            <div id="ttests" class="section">
+                <div class="module">
+                    <h2>📊 T-Tests - Comparing Averages</h2>
+
+                    <div class="analogy-box">
+                        <h4>🎯 What's a T-Test?</h4>
+                        <p>A t-test answers the question: <strong>"Are these two averages REALLY different, or could it just be random chance?"</strong></p>
+                        <p style="margin-top: 10px;">Think of it like comparing Tyler's math test scores before and after getting a tutor. Did the tutor REALLY help, or was improvement just luck?</p>
+                    </div>
+
+                    <h3>🔀 Types of T-Tests</h3>
+
+                    <div class="concept-box">
+                        <h4>1. Independent Samples T-Test (Two Different Groups)</h4>
+                        <p><strong>Use when:</strong> Comparing TWO SEPARATE groups that have nothing to do with each other</p>
+                        
+                        <div class="example-box">
+                            <h4>✈️ SCASPA Examples</h4>
+                            <ul>
+                                <li>Comparing passenger satisfaction at RLB Airport vs. Port Zante</li>
+                                <li>Comparing salaries of airport employees vs. seaport employees</li>
+                                <li>Comparing monthly expenditures in St. Georges vs. Grenville (Question 1!)</li>
+                            </ul>
+                        </div>
+
+                        <div class="important">
+                            <h4>🔍 Key Assumption: Are Variances Equal?</h4>
+                            <p>Before doing an independent t-test, you need to check if both groups have similar "spread" (variance).</p>
+                            <ul>
+                                <li><strong>Equal variances:</strong> Use standard t-test</li>
+                                <li><strong>Unequal variances:</strong> Use Welch's t-test (JASP does this automatically!)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="concept-box">
+                        <h4>2. Paired Samples T-Test (Same Group, Two Times)</h4>
+                        <p><strong>Use when:</strong> Comparing the SAME group measured TWICE (before & after)</p>
+                        
+                        <div class="example-box">
+                            <h4>✈️ SCASPA Examples</h4>
+                            <ul>
+                                <li>Employee productivity BEFORE and AFTER a training program</li>
+                                <li>Customer wait times BEFORE and AFTER a new system</li>
+                                <li>Tyler's test scores BEFORE and AFTER studying</li>
+                                <li>Cheesecake sweetness ratings: existing vs. new recipe (Question 4!)</li>
+                            </ul>
+                        </div>
+
+                        <div class="analogy-box">
+                            <h4>🎭 The Paired Test Analogy</h4>
+                            <p>Imagine weighing Tyler before and after summer vacation. He's the SAME person, measured twice. That's paired data!</p>
+                            <p style="margin-top: 10px;">In contrast, weighing Tyler and comparing to a random kid his age would be INDEPENDENT (two different people).</p>
+                        </div>
+                    </div>
+
+                    <div class="concept-box">
+                        <h4>3. One-Sample T-Test (Comparing to a Known Value)</h4>
+                        <p><strong>Use when:</strong> Comparing your sample average to a specific number you already know</p>
+                        
+                        <div class="example-box">
+                            <h4>✈️ SCASPA Examples</h4>
+                            <ul>
+                                <li>Testing if average employee satisfaction = 7 out of 10</li>
+                                <li>Testing if mean expenditure in St. Georges < 1200 (Question 1b!)</li>
+                                <li>Testing if mean SAT score ≠ 1100 (Question 2!)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>📏 Understanding T-Values</h3>
+
+                    <div class="concept-box">
+                        <h4>What IS a T-Value?</h4>
+                        <p>The t-value measures how many "standard errors" away your sample mean is from what you expected.</p>
+                        
+                        <div class="formula">
+                            t = (difference between means) / (standard error)
+                            
+                            The bigger the |t-value|, the more different the groups are!
+                        </div>
+
+                        <div class="tip">
+                            <h4>🎯 T-Value Rules of Thumb</h4>
+                            <ul>
+                                <li><strong>|t| < 2:</strong> Probably not significant (difference might be random)</li>
+                                <li><strong>|t| around 2:</strong> Borderline (check your p-value!)</li>
+                                <li><strong>|t| > 2:</strong> Likely significant (real difference!)</li>
+                            </ul>
+                            <p style="margin-top: 10px;"><em>Note:</em> This is just a rough guide! Always check the p-value!</p>
+                        </div>
+                    </div>
+
+                    <h3>📐 Confidence Intervals - The Range of Truth</h3>
+
+                    <div class="analogy-box">
+                        <h4>🎯 What's a Confidence Interval?</h4>
+                        <p>Instead of saying "the difference is EXACTLY 5.2", we say "we're 95% confident the difference is between 3.1 and 7.3"</p>
+                        <p style="margin-top: 10px;"><strong>SCASPA Analogy:</strong> Instead of saying "the cruise ship will arrive at EXACTLY 8:00 AM", you say "we're 95% confident it'll arrive between 7:45 AM and 8:15 AM"</p>
+                    </div>
+
+                    <div class="concept-box">
+                        <h4>Confidence Interval Basics</h4>
+                        <p>A 95% confidence interval gives you a RANGE where the true value probably lives.</p>
+                        
+                        <div class="formula">
+                            95% CI = (Sample Mean) ± (Critical Value × Standard Error)
+                            
+                            Example: 150 ± 20 = [130, 170]
+                        </div>
+
+                        <div class="important">
+                            <h4>🔍 Interpreting Confidence Intervals</h4>
+                            <p><strong>Question 1c asks:</strong> 95% CI for difference (St. Georges - Grenville)</p>
+                            <p>Let's say you get CI = [-50, 150]</p>
+                            <ul style="margin-top: 10px;">
+                                <li>✅ Interpretation: "We're 95% confident the true difference in mean expenditure is between -$50 and $150"</li>
+                                <li>🤔 <strong>Notice:</strong> This interval includes ZERO! That means the difference might be nothing!</li>
+                                <li>❌ If interval was [20, 150] (doesn't include 0), we'd be confident St. Georges spends MORE</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>🎬 Step-by-Step: Conducting a T-Test</h3>
+
+                    <ol class="step-list">
+                        <li><strong>Identify which t-test you need</strong><br>
+                        • Independent? Paired? One-sample?<br>
+                        • Look at your data structure!</li>
+                        
+                        <li><strong>Write your hypotheses</strong><br>
+                        • H₀: No difference (μ₁ = μ₂ or μ = value)<br>
+                        • H₁: There is a difference (specify direction if needed)</li>
+                        
+                        <li><strong>Set your significance level</strong><br>
+                        • Usually α = 0.05 (check your question!)</li>
+                        
+                        <li><strong>Calculate statistics (JASP does this!)</strong><br>
+                        • Mean, SD, t-value, p-value</li>
+                        
+                        <li><strong>Make decision</strong><br>
+                        • p < α? → Reject H₀<br>
+                        • p ≥ α? → Fail to reject H₀</li>
+                        
+                        <li><strong>Write conclusion</strong><br>
+                        • In context of the problem<br>
+                        • Reference significance level<br>
+                        • State what it means in plain English!</li>
+                    </ol>
+
+                    <div class="example-box">
+                        <h4>🌴 Complete Example: Airport vs. Seaport Employee Satisfaction</h4>
+                        <p><strong>Scenario:</strong> You survey 20 airport employees and 20 seaport employees about job satisfaction (scale 1-10).</p>
+                        
+                        <p><strong>Data:</strong></p>
+                        <ul>
+                            <li>Airport: Mean = 7.2, SD = 1.5</li>
+                            <li>Seaport: Mean = 6.5, SD = 1.8</li>
+                        </ul>
+
+                        <p style="margin-top: 15px;"><strong>Step 1:</strong> Independent samples t-test (two different groups)</p>
+                        
+                        <p><strong>Step 2:</strong> Hypotheses<br>
+                        H₀: μ_airport = μ_seaport (no difference in satisfaction)<br>
+                        H₁: μ_airport ≠ μ_seaport (satisfaction differs)</p>
+
+                        <p><strong>Step 3:</strong> α = 0.05</p>
+
+                        <p><strong>Step 4:</strong> JASP gives: t = 1.43, p = 0.161</p>
+
+                        <p><strong>Step 5:</strong> 0.161 > 0.05 → Fail to reject H₀</p>
+
+                        <p><strong>Step 6:</strong> "There is insufficient evidence at the 5% significance level to conclude that job satisfaction differs between airport and seaport employees at SCASPA. Both groups show similar satisfaction levels."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHI-SQUARE SECTION -->
+            <div id="chi-square" class="section">
+                <div class="module">
+                    <h2>✖️ Chi-Square Test - Relationships Between Categories</h2>
+
+                    <div class="analogy-box">
+                        <h4>🎯 What's Different About Chi-Square?</h4>
+                        <p>T-tests compare NUMBERS (averages). Chi-square tests compare CATEGORIES (groups)!</p>
+                        <p style="margin-top: 10px;"><strong>SCASPA Example:</strong> Is there a relationship between an employee's DEPARTMENT (category) and their SMOKING HABITS (category)? Chi-square can answer this!</p>
+                    </div>
+
+                    <h3>🔍 When to Use Chi-Square</h3>
+
+                    <div class="concept-box">
+                        <h4>Chi-Square Test of Independence</h4>
+                        <p><strong>Use when:</strong> You want to know if two categorical variables are related</p>
+                        
+                        <div class="example-box">
+                            <h4>✈️ SCASPA Examples</h4>
+                            <ul>
+                                <li>Is there a relationship between DEPARTMENT and SMOKING HABITS? (Question 3!)</li>
+                                <li>Is there a relationship between SHIFT (day/night) and CUSTOMER COMPLAINTS (yes/no)?</li>
+                                <li>Is passenger satisfaction INDEPENDENT of airline carrier?</li>
+                            </ul>
+                        </div>
+
+                        <div class="important">
+                            <h4>📊 What Makes Data "Categorical"?</h4>
+                            <p><strong>Categorical data</strong> = things you can count into groups (NOT averages)</p>
+                            <ul style="margin-top: 10px;">
+                                <li>✅ Job position (Head, Senior, Director, Assistant)</li>
+                                <li>✅ Smoking habits (Heavy, Moderate, Light, Non-smoker)</li>
+                                <li>✅ Department (HR, Operations, Finance)</li>
+                                <li>❌ Age (this is numerical - use t-test instead!)</li>
+                                <li>❌ Salary (numerical - use t-test!)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>📋 Understanding Contingency Tables</h3>
+
+                    <div class="concept-box">
+                        <h4>What's a Contingency Table?</h4>
+                        <p>It's a fancy way to organize counts into rows and columns. Think of it like an employee schedule grid!</p>
+                        
+                        <table style="margin-top: 20px;">
+                            <tr>
+                                <th>Position</th>
+                                <th>Heavy Smoker</th>
+                                <th>Moderate</th>
+                                <th>Light</th>
+                                <th>Non-smoker</th>
+                                <th>TOTAL</th>
+                            </tr>
+                            <tr>
+                                <td>Head of Dept</td>
+                                <td>356</td>
+                                <td>167</td>
+                                <td>299</td>
+                                <td>593</td>
+                                <td>1415</td>
+                            </tr>
+                            <tr>
+                                <td>Senior Director</td>
+                                <td>439</td>
+                                <td>292</td>
+                                <td>159</td>
+                                <td>227</td>
+                                <td>1117</td>
+                            </tr>
+                            <tr>
+                                <td>Director</td>
+                                <td>230</td>
+                                <td>437</td>
+                                <td>242</td>
+                                <td>371</td>
+                                <td>1280</td>
+                            </tr>
+                            <tr>
+                                <td>Assistant Director</td>
+                                <td>256</td>
+                                <td>269</td>
+                                <td>176</td>
+                                <td>487</td>
+                                <td>1188</td>
+                            </tr>
+                        </table>
+
+                        <p style="margin-top: 15px;"><strong>Each cell</strong> shows how many people fall into that specific combination (e.g., 356 Heads of Department are heavy smokers)</p>
+                    </div>
+
+                    <h3>🎬 Chi-Square: Step by Step</h3>
+
+                    <ol class="step-list">
+                        <li><strong>State your hypotheses</strong><br>
+                        H₀: The two variables are INDEPENDENT (no relationship)<br>
+                        H₁: The two variables are DEPENDENT (there IS a relationship)</li>
+                        
+                        <li><strong>Set significance level</strong><br>
+                        Usually α = 0.05</li>
+                        
+                        <li><strong>Organize data into contingency table</strong><br>
+                        Rows = one variable, Columns = other variable</li>
+                        
+                        <li><strong>Calculate expected frequencies</strong><br>
+                        JASP does this! But the formula is:<br>
+                        Expected = (Row Total × Column Total) / Grand Total</li>
+                        
+                        <li><strong>Calculate chi-square statistic</strong><br>
+                        χ² = Σ [(Observed - Expected)² / Expected]<br>
+                        (JASP does this automatically!)</li>
+                        
+                        <li><strong>Find p-value and make decision</strong><br>
+                        • If p < α: REJECT H₀ (variables ARE related!)<br>
+                        • If p ≥ α: FAIL TO REJECT H₀ (no evidence of relationship)</li>
+                        
+                        <li><strong>Write conclusion in context</strong><br>
+                        Explain what the relationship (or lack thereof) means!</li>
+                    </ol>
+
+                    <div class="example-box">
+                        <h4>🚢 Complete SCASPA Example: Department vs. Vacation Preference</h4>
+                        <p><strong>Scenario:</strong> You survey SCASPA employees about vacation preferences</p>
+                        
+                        <table style="margin-top: 15px;">
+                            <tr>
+                                <th>Department</th>
+                                <th>Beach</th>
+                                <th>Mountain</th>
+                                <th>City</th>
+                            </tr>
+                            <tr>
+                                <td>Airport Operations</td>
+                                <td>45</td>
+                                <td>20</td>
+                                <td>15</td>
+                            </tr>
+                            <tr>
+                                <td>Seaport Operations</td>
+                                <td>50</td>
+                                <td>15</td>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <td>HR/Admin</td>
+                                <td>25</td>
+                                <td>25</td>
+                                <td>20</td>
+                            </tr>
+                        </table>
+
+                        <p style="margin-top: 15px;"><strong>Hypotheses:</strong></p>
+                        <ul>
+                            <li>H₀: Department and vacation preference are independent</li>
+                            <li>H₁: Department and vacation preference are related</li>
+                        </ul>
+
+                        <p><strong>After running in JASP:</strong> χ² = 12.45, p = 0.014</p>
+
+                        <p><strong>Decision:</strong> 0.014 < 0.05 → Reject H₀</p>
+
+                        <p><strong>Conclusion:</strong> "There is sufficient evidence at the 5% significance level to conclude that there is a relationship between department and vacation preferences at SCASPA. Different departments show different patterns in their vacation choices."</p>
+                    </div>
+
+                    <div class="important">
+                        <h4>⚠️ Chi-Square Assumptions</h4>
+                        <ul>
+                            <li>Data must be COUNTS (not percentages or averages)</li>
+                            <li>Categories must be mutually exclusive (each person in only one category)</li>
+                            <li>Expected frequency in each cell should be ≥ 5 (JASP will warn you if violated)</li>
+                        </ul>
+                    </div>
+
+                    <div class="tip">
+                        <h4>🎯 Interpreting Chi-Square Results</h4>
+                        <p>Unlike t-tests, chi-square doesn't tell you WHICH groups are different, just that SOME relationship exists.</p>
+                        <p style="margin-top: 10px;">To figure out the pattern, look at your contingency table and see which cells have way more or way fewer people than expected!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- JASP LAB SECTION -->
+            <div id="jasp" class="section">
+                <div class="module">
+                    <h2>📝 Your Assignment - Connecting It All!</h2>
+
+                    <div class="important">
+                        <h4>🎯 Overview</h4>
+                        <p>You have 4 questions testing different concepts. Let's break down EXACTLY what each one needs!</p>
+                    </div>
+
+                    <h3>Question 1: St. Georges vs. Grenville Expenditure</h3>
+
+                    <div class="concept-box">
+                        <h4>📊 The Setup</h4>
+                        <p>You have monthly expenditure data for 14 families in each town.</p>
+                        <p><strong>This is:</strong> Independent samples (two different groups of families)</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Part (a) - 3 marks: Which test to use?</h4>
+                        <p><strong>What they want:</strong> Should we use paired or independent t-test?</p>
+                        
+                        <p style="margin-top: 15px;"><strong>Your answer should say:</strong></p>
+                        <ul>
+                            <li>✅ "An <strong>independent samples t-test</strong> is most appropriate"</li>
+                            <li>✅ "This is because we are comparing two SEPARATE groups of families (St. Georges vs. Grenville)"</li>
+                            <li>✅ "The families are not related to each other - they're different people in different towns"</li>
+                        </ul>
+
+                        <div class="tip">
+                            <h4>💡 Why NOT paired?</h4>
+                            <p>Paired would be if you measured the SAME families twice (e.g., their spending in January vs. February). But these are completely different families!</p>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Part (b) - 5 marks: Test if mean < 1200 in St. Georges</h4>
+                        <p><strong>What they want:</strong> One-sample t-test (comparing to a specific value: 1200)</p>
+                        
+                        <ol class="step-list" style="font-size: 0.95em;">
+                            <li>Calculate mean and SD for St. Georges data (JASP does this)</li>
+                            <li>Write hypotheses:
+                                <ul style="list-style: none;">
+                                    <li>H₀: μ = 1200</li>
+                                    <li>H₁: μ < 1200 (LEFT-TAILED test!)</li>
+                                </ul>
+                            </li>
+                            <li>Set α = 0.01 (1% level - they told you!)</li>
+                            <li>Run one-sample t-test in JASP (test value = 1200)</li>
+                            <li>Get p-value, make decision</li>
+                            <li>Write conclusion: "There is [sufficient/insufficient] evidence at the 1% significance level to conclude that mean expenditure in St. Georges is less than $1200"</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Part (c) - 5 marks: 95% Confidence Interval for difference</h4>
+                        <p><strong>What they want:</strong> CI for (St. Georges mean - Grenville mean)</p>
+                        
+                        <ol class="step-list" style="font-size: 0.95em;">
+                            <li>Run independent samples t-test in JASP</li>
+                            <li>Check the confidence interval output</li>
+                            <li>Report it: "The 95% confidence interval for the difference in mean expenditure is [lower bound, upper bound]"</li>
+                            <li>Interpret: "We are 95% confident that the true difference in mean expenditure between St. Georges and Grenville is between $X and $Y"</li>
+                        </ol>
+
+                        <div class="tip">
+                            <h4>🔍 What if the CI includes zero?</h4>
+                            <p>If your interval is something like [-50, 150], it means the difference could be negative, zero, or positive. This suggests the expenditures might NOT be significantly different!</p>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Part (d) - 5 marks: Test if Grenville > St. Georges</h4>
+                        <p><strong>What they want:</strong> Independent samples t-test (one-tailed)</p>
+                        
+                        <p><strong>Hypotheses:</strong></p>
+                        <ul>
+                            <li>H₀: μ_Grenville ≤ μ_StGeorges</li>
+                            <li>H₁: μ_Grenville > μ_StGeorges (RIGHT-TAILED!)</li>
+                        </ul>
+
+                        <p style="margin-top: 10px;">α = 0.10 (10% level)</p>
+
+                        <div class="important">
+                            <h4>⚡ Key Point!</h4>
+                            <p>This is the OPPOSITE direction from part (b)! Part (b) tested if St. Georges < 1200. This tests if Grenville > St. Georges.</p>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Part (e) - 2 marks: Confirm with JASP</h4>
+                        <p><strong>What they want:</strong> Screenshots/printouts of your JASP input and output!</p>
+                        
+                        <p><strong>You need to show:</strong></p>
+                        <ul>
+                            <li>✅ Data entry screen (showing your data)</li>
+                            <li>✅ Test selection screen (showing which test you chose)</li>
+                            <li>✅ Output tables (showing your results)</li>
+                        </ul>
+                    </div>
+
+                    <h3 style="margin-top: 40px;">Question 2: SAT Scores</h3>
+
+                    <div class="concept-box">
+                        <h4>📊 The Setup</h4>
+                        <p>28 students, SAT scores given. Test if mean = 1100.</p>
+                        <p><strong>This is:</strong> One-sample t-test</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Part (a) - 5 marks: Test if mean ≠ 1100</h4>
+                        <p><strong>TWO-TAILED test</strong> (≠ means "not equal to")</p>
+                        
+                        <ul>
+                            <li>H₀: μ = 1100</li>
+                            <li>H₁: μ ≠ 1100</li>
+                            <li>α = 0.01 (1% level)</li>
+                        </ul>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Part (b) - 5 marks: Test if mean < 950</h4>
+                        <p><strong>LEFT-TAILED test</strong></p>
+                        
+                        <ul>
+                            <li>H₀: μ = 950 (or μ ≥ 950)</li>
+                            <li>H₁: μ < 950</li>
+                            <li>α = 0.10 (10% level)</li>
+                            <li><strong>SHOW ALL STEPS!</strong> - They want the complete process written out</li>
+                        </ul>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Part (c) - 2 marks: Would conclusion change at 5%?</h4>
+                        <p><strong>What they want:</strong> Compare your p-value from part (b) to α = 0.05</p>
+                        
+                        <div class="tip">
+                            <h4>💡 Think About It</h4>
+                            <p>If your p-value was 0.08:</p>
+                            <ul>
+                                <li>At α = 0.10: 0.08 < 0.10 → Reject H₀</li>
+                                <li>At α = 0.05: 0.08 > 0.05 → Fail to reject H₀</li>
+                                <li>YES, conclusion would change!</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 40px;">Question 3: Smoking Habits</h3>
+
+                    <div class="concept-box">
+                        <h4>📊 The Setup</h4>
+                        <p>Contingency table: Position vs. Smoking Habits</p>
+                        <p><strong>This is:</strong> Chi-Square Test of Independence</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>All Parts Together</h4>
+                        
+                        <p><strong>Part (a) - Hypotheses:</strong></p>
+                        <ul>
+                            <li>H₀: Position and smoking habits are independent (no relationship)</li>
+                            <li>H₁: Position and smoking habits are dependent (there IS a relationship)</li>
+                        </ul>
+
+                        <p style="margin-top: 15px;"><strong>Part (b) - Decision Rule:</strong></p>
+                        <p>α = 0.05, so reject H₀ if p-value < 0.05</p>
+
+                        <p style="margin-top: 15px;"><strong>Part (c) - Show work:</strong></p>
+                        <p>You'll need to show the chi-square calculation (but JASP does this!)</p>
+
+                        <p style="margin-top: 15px;"><strong>Part (d) - Conclusion:</strong></p>
+                        <p>"Based on the chi-square test results [state if you rejected or failed to reject H₀], there is [sufficient/insufficient] evidence to conclude a relationship exists between job position and smoking habits among the 5000 employees."</p>
+
+                        <p style="margin-top: 15px;"><strong>Part (e) - Would it change at 10%?</strong></p>
+                        <p>Compare your p-value to α = 0.10 instead</p>
+                    </div>
+
+                    <h3 style="margin-top: 40px;">Question 4: Cheesecake Sweetness</h3>
+
+                    <div class="concept-box">
+                        <h4>📊 The Setup</h4>
+                        <p>12 people rate BOTH recipes (existing AND new)</p>
+                        <p><strong>This is:</strong> Paired samples t-test!</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Part (a) - 6 marks: Confidence Intervals</h4>
+                        <p>Calculate 95% CI for EACH recipe separately (not the difference!)</p>
+                        
+                        <div class="formula">
+                            CI = mean ± (t-critical × SE)
+                            
+                            JASP will calculate this in "Descriptives"
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Part (b) - 5 marks: Test if difference = 40</h4>
+                        <p><strong>Tricky part!</strong> They want to test if the DIFFERENCE is 40.</p>
+                        
+                        <ul>
+                            <li>H₀: μ_difference = 40</li>
+                            <li>H₁: μ_difference ≠ 40</li>
+                            <li>α = 0.05</li>
+                        </ul>
+
+                        <div class="tip">
+                            <h4>💡 How to do this in JASP</h4>
+                            <p>Create a new column: Difference = New Recipe - Existing Recipe</p>
+                            <p>Then run a ONE-SAMPLE t-test on this difference column, testing against μ = 40</p>
+                        </div>
+                    </div>
+
+                    <div class="important">
+                        <h4>🎯 General Tips for ALL Questions</h4>
+                        <ul>
+                            <li>✅ Always state hypotheses clearly</li>
+                            <li>✅ Always reference the significance level in your conclusion</li>
+                            <li>✅ Write conclusions in context (don't just say "reject H₀"!)</li>
+                            <li>✅ For JASP questions: Take clear screenshots of EVERYTHING</li>
+                            <li>✅ Show your work even when JASP calculates it</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- JASP LAB SECTION -->
+            <div id="jasp" class="section">
+                <div class="module">
+                    <h2>💻 JASP Lab - Your Hands-On Tutorial</h2>
+
+                    <div class="analogy-box">
+                        <h4>🎯 What is JASP?</h4>
+                        <p>JASP is FREE statistical software that makes analysis super easy! Think of it like Excel, but specifically designed for statistics.</p>
+                        <p style="margin-top: 10px;">It's point-and-click (no coding required!) and gives you beautiful output tables ready to include in your assignment! 🎉</p>
+                    </div>
+
+                    <h3>📥 Step 1: Download and Install JASP</h3>
+
+                    <ol class="step-list">
+                        <li>Go to <strong>jasp-stats.org</strong></li>
+                        <li>Click "Download JASP"</li>
+                        <li>Choose your operating system (Windows/Mac)</li>
+                        <li>Install it (just like any other program!)</li>
+                        <li>Open JASP - you'll see a clean, white interface</li>
+                    </ol>
+
+                    <div class="important">
+                        <h4>🎯 First Impression</h4>
+                        <p>When you open JASP, you'll see:</p>
+                        <ul>
+                            <li><strong>Left side:</strong> Menu of statistical tests</li>
+                            <li><strong>Center:</strong> Data entry area (like Excel)</li>
+                            <li><strong>Right side:</strong> Results panel (appears when you run tests)</li>
+                        </ul>
+                    </div>
+
+                    <h3>📊 Step 2: Enter Your Data</h3>
+
+                    <div class="concept-box">
+                        <h4>The Spreadsheet View</h4>
+                        <p>JASP's data entry looks just like Excel!</p>
+                        
+                        <ul style="margin-top: 15px;">
+                            <li><strong>Rows:</strong> Each person/observation (each family, each student, etc.)</li>
+                            <li><strong>Columns:</strong> Each variable (St. Georges expenditure, Grenville expenditure, etc.)</li>
+                        </ul>
+
+                        <div class="example-box">
+                            <h4>✈️ SCASPA Practice: Airport Wait Times</h4>
+                            <p>Let's create practice data for 10 passengers' wait times (in minutes):</p>
+                            
+                            <table style="margin-top: 10px; font-size: 0.9em;">
+                                <tr>
+                                    <th>Passenger</th>
+                                    <th>Wait_Time</th>
+                                </tr>
+                                <tr><td>1</td><td>12</td></tr>
+                                <tr><td>2</td><td>15</td></tr>
+                                <tr><td>3</td><td>18</td></tr>
+                                <tr><td>4</td><td>10</td></tr>
+                                <tr><td>5</td><td>14</td></tr>
+                                <tr><td>6</td><td>16</td></tr>
+                                <tr><td>7</td><td>13</td></tr>
+                                <tr><td>8</td><td>11</td></tr>
+                                <tr><td>9</td><td>17</td></tr>
+                                <tr><td>10</td><td>15</td></tr>
+                            </table>
+
+                            <p style="margin-top: 15px;"><strong>How to enter this:</strong></p>
+                            <ol>
+                                <li>Click on the first column header, type "Wait_Time"</li>
+                                <li>Type the numbers down the column (12, 15, 18, etc.)</li>
+                                <li>That's it! Your data is ready!</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="tip">
+                        <h4>💡 Quick Tips for Data Entry</h4>
+                        <ul>
+                            <li>Double-click column headers to rename them</li>
+                            <li>Use TAB to move to the next cell</li>
+                            <li>Use ENTER to move down</li>
+                            <li>Right-click column headers to change variable type (Nominal/Ordinal/Scale)</li>
+                        </ul>
+                    </div>
+
+                    <h3>🔬 Step 3: Run Your First Analysis - Descriptive Statistics</h3>
+
+                    <ol class="step-list">
+                        <li><strong>Click "Descriptives" in the left menu</strong><br>
+                        Then click "Descriptive Statistics"</li>
+                        
+                        <li><strong>Move your variable to the right</strong><br>
+                        You'll see available variables on the left. Click "Wait_Time" and move it to the "Variables" box on the right (use the arrow button)</li>
+                        
+                        <li><strong>Check what you want to see</strong><br>
+                        Under "Statistics", check boxes for:
+                        <ul>
+                            <li>✅ Mean</li>
+                            <li>✅ Std. deviation</li>
+                            <li>✅ Minimum</li>
+                            <li>✅ Maximum</li>
+                        </ul>
+                        </li>
+                        
+                        <li><strong>Watch the results appear!</strong><br>
+                        The right panel automatically shows your output table! 🎉</li>
+                    </ol>
+
+                    <div class="jasp-screenshot">
+                        <h4>📊 What You'll See:</h4>
+                        <p>A nice table showing:</p>
+                        <ul>
+                            <li>Mean: 14.1 minutes</li>
+                            <li>SD: 2.51 minutes</li>
+                            <li>Min: 10 minutes</li>
+                            <li>Max: 18 minutes</li>
+                        </ul>
+                        <p style="margin-top: 10px;"><strong>This tells you:</strong> On average, passengers wait about 14 minutes, with most wait times varying by about 2.5 minutes from that average.</p>
+                    </div>
+
+                    <h3>📊 Step 4: One-Sample T-Test (Question 2 Practice!)</h3>
+
+                    <div class="example-box">
+                        <h4>🎯 Scenario</h4>
+                        <p>Let's test if the average wait time is different from 15 minutes.</p>
+                    </div>
+
+                    <ol class="step-list">
+                        <li><strong>Click "T-Tests" in the left menu</strong><br>
+                        Then select "One Sample T-Test"</li>
+                        
+                        <li><strong>Move your variable</strong><br>
+                        Move "Wait_Time" to the "Variables" box</li>
+                        
+                        <li><strong>Set the test value</strong><br>
+                        Look for "Test value" and type <strong>15</strong></li>
+                        
+                        <li><strong>Choose your options</strong><br>
+                        Under "Tests":
+                        <ul>
+                            <li>Check "Student" (this is the standard t-test)</li>
+                        </ul>
+                        Under "Additional Statistics":
+                        <ul>
+                            <li>Check "Confidence interval" (usually 95%)</li>
+                            <li>Check "Descriptives"</li>
+                        </ul>
+                        </li>
+                        
+                        <li><strong>Read your results!</strong><br>
+                        Look at the p-value in the output table</li>
+                    </ol>
+
+                    <div class="jasp-screenshot">
+                        <h4>📊 Understanding the Output</h4>
+                        <p>Your output table will show:</p>
+                        <ul>
+                            <li><strong>t:</strong> The t-statistic (e.g., -1.13)</li>
+                            <li><strong>df:</strong> Degrees of freedom (usually n-1, so 9 in our case)</li>
+                            <li><strong>p:</strong> The p-value (e.g., 0.287)</li>
+                            <li><strong>95% CI:</strong> Confidence interval (e.g., [12.3, 15.9])</li>
+                        </ul>
+
+                        <p style="margin-top: 15px;"><strong>Interpretation:</strong></p>
+                        <p>If p = 0.287 > 0.05 → Fail to reject H₀</p>
+                        <p>"There is insufficient evidence at the 5% significance level to conclude that the mean wait time differs from 15 minutes."</p>
+                    </div>
+
+                    <h3>📊 Step 5: Independent T-Test (Question 1 Practice!)</h3>
+
+                    <div class="example-box">
+                        <h4>🎯 Let's Add More Data</h4>
+                        <p>Now we'll compare wait times at Airport vs. Seaport</p>
+                        
+                        <p style="margin-top: 10px;"><strong>Add a new column "Location":</strong></p>
+                        <ol>
+                            <li>Click the + button to add a column</li>
+                            <li>Name it "Location"</li>
+                            <li>Right-click the header → Select "Nominal"</li>
+                            <li>For rows 1-5, type "Airport"</li>
+                            <li>For rows 6-10, type "Seaport"</li>
+                        </ol>
+
+                        <p style="margin-top: 10px;"><strong>Now modify Wait_Time:</strong></p>
+                        <ul>
+                            <li>Airport (rows 1-5): Keep as is (or make them 10, 12, 14, 11, 13)</li>
+                            <li>Seaport (rows 6-10): Change to 16, 18, 17, 19, 15</li>
+                        </ul>
+                    </div>
+
+                    <ol class="step-list">
+                        <li><strong>Click "T-Tests" → "Independent Samples T-Test"</strong></li>
+                        
+                        <li><strong>Set up the test</strong><br>
+                        • Move "Wait_Time" to "Variables"<br>
+                        • Move "Location" to "Grouping Variable"</li>
+                        
+                        <li><strong>Additional options</strong><br>
+                        • Check "Student"<br>
+                        • Check "Descriptives"<br>
+                        • Check "Confidence interval"</li>
+                        
+                        <li><strong>Boom! Results appear!</strong></li>
+                    </ol>
+
+                    <div class="jasp-screenshot">
+                        <h4>📊 What You'll See</h4>
+                        <p>Two tables:</p>
+                        
+                        <p><strong>1. Group Descriptives:</strong></p>
+                        <ul>
+                            <li>Airport: Mean = 12.0, SD = 1.58</li>
+                            <li>Seaport: Mean = 17.0, SD = 1.58</li>
+                        </ul>
+
+                        <p style="margin-top: 10px;"><strong>2. Independent Samples T-Test:</strong></p>
+                        <ul>
+                            <li>t = -5.00</li>
+                            <li>p < 0.001 (very significant!)</li>
+                            <li>95% CI for difference: [-7.2, -2.8]</li>
+                        </ul>
+
+                        <p style="margin-top: 15px;"><strong>Conclusion:</strong> "There is strong evidence that wait times differ significantly between Airport and Seaport, with Seaport having longer average wait times (17 min vs 12 min)."</p>
+                    </div>
+
+                    <h3>📊 Step 6: Chi-Square Test (Question 3 Practice!)</h3>
+
+                    <div class="example-box">
+                        <h4>🎯 New Data Setup</h4>
+                        <p>For chi-square, you need categorical data. Let's test: Department vs. Break Preference</p>
+                    </div>
+
+                    <div class="concept-box">
+                        <h4>Two Ways to Enter Chi-Square Data</h4>
+                        
+                        <p><strong>Method 1: Raw Data (Easier!)</strong></p>
+                        <p>Each row is one person:</p>
+                        <table style="font-size: 0.85em;">
+                            <tr><th>Department</th><th>Break_Pref</th></tr>
+                            <tr><td>Airport</td><td>Coffee</td></tr>
+                            <tr><td>Airport</td><td>Tea</td></tr>
+                            <tr><td>Seaport</td><td>Coffee</td></tr>
+                            <tr><td>Seaport</td><td>Water</td></tr>
+                            <tr><td>...</td><td>...</td></tr>
+                        </table>
+
+                        <p style="margin-top: 15px;"><strong>Method 2: Frequency Table</strong></p>
+                        <p>You can also copy/paste the contingency table from your homework directly into JASP!</p>
+                    </div>
+
+                    <ol class="step-list">
+                        <li><strong>Click "Frequencies" → "Contingency Tables"</strong></li>
+                        
+                        <li><strong>Set up variables</strong><br>
+                        • Move "Department" to "Rows"<br>
+                        • Move "Break_Pref" to "Columns"</li>
+                        
+                        <li><strong>Check test options</strong><br>
+                        Under "Statistics":
+                        <ul>
+                            <li>✅ Chi-square</li>
+                        </ul>
+                        Under "Cells":
+                        <ul>
+                            <li>✅ Expected counts (this helps you check assumptions)</li>
+                        </ul>
+                        </li>
+                        
+                        <li><strong>Read results!</strong></li>
+                    </ol>
+
+                    <div class="jasp-screenshot">
+                        <h4>📊 Chi-Square Output</h4>
+                        <p>You'll get:</p>
+                        <ul>
+                            <li><strong>Contingency table:</strong> Shows the counts</li>
+                            <li><strong>Expected counts:</strong> What you'd expect if there's no relationship</li>
+                            <li><strong>Chi-square tests table:</strong> Shows χ², df, and p-value</li>
+                        </ul>
+
+                        <p style="margin-top: 15px;"><strong>Example result:</strong> χ² = 8.45, p = 0.037</p>
+                        <p><strong>Conclusion:</strong> "There is evidence at the 5% level that department and break preference are related."</p>
+                    </div>
+
+                    <h3>📊 Step 7: Paired T-Test (Question 4 Practice!)</h3>
+
+                    <div class="example-box">
+                        <h4>🎯 Setup for Paired Data</h4>
+                        <p>For paired tests, you need TWO columns for the same people measured twice:</p>
+                        
+                        <table style="font-size: 0.85em;">
+                            <tr><th>Person</th><th>Before_Training</th><th>After_Training</th></tr>
+                            <tr><td>1</td><td>65</td><td>72</td></tr>
+                            <tr><td>2</td><td>70</td><td>75</td></tr>
+                            <tr><td>3</td><td>68</td><td>71</td></tr>
+                            <tr><td>...</td><td>...</td><td>...</td></tr>
+                        </table>
+                    </div>
+
+                    <ol class="step-list">
+                        <li><strong>Click "T-Tests" → "Paired Samples T-Test"</strong></li>
+                        
+                        <li><strong>Select your pair</strong><br>
+                        Move BOTH variables into the "Paired Variables" box<br>
+                        (They'll appear as a pair in the box)</li>
+                        
+                        <li><strong>Options</strong><br>
+                        • Check "Student"<br>
+                        • Check "Descriptives"<br>
+                        • Check "Confidence interval"</li>
+                        
+                        <li><strong>Results appear!</strong></li>
+                    </ol>
+
+                    <div class="jasp-screenshot">
+                        <h4>📊 Paired T-Test Output</h4>
+                        <p>Shows:</p>
+                        <ul>
+                            <li>Mean of differences</li>
+                            <li>t-statistic</li>
+                            <li>p-value</li>
+                            <li>95% CI for the mean difference</li>
+                        </ul>
+                    </div>
+
+                    <h3>💾 Step 8: Saving and Exporting</h3>
+
+                    <div class="concept-box">
+                        <h4>How to Save Your Work</h4>
+                        
+                        <p><strong>Save your JASP file:</strong></p>
+                        <ul>
+                            <li>File → Save As</li>
+                            <li>Save as a .jasp file</li>
+                            <li>This saves EVERYTHING (data + analyses)</li>
+                        </ul>
+
+                        <p style="margin-top: 15px;"><strong>Export results for your assignment:</strong></p>
+                        <ul>
+                            <li>Right-click any output table</li>
+                            <li>Select "Copy" or "Save As"</li>
+                            <li>Paste into Word document</li>
+                            <li>OR take a screenshot (Windows: Win+Shift+S, Mac: Cmd+Shift+4)</li>
+                        </ul>
+                    </div>
+
+                    <div class="important">
+                        <h4>📸 For Your Homework (Questions 1e, 2d, 3f)</h4>
+                        <p>You need to show:</p>
+                        <ul>
+                            <li>✅ Screenshot of data entry</li>
+                            <li>✅ Screenshot of test selection/options</li>
+                            <li>✅ Screenshot of output tables</li>
+                        </ul>
+                        <p style="margin-top: 10px;"><strong>Pro tip:</strong> Take screenshots as you go! Don't wait until the end!</p>
+                    </div>
+
+                    <h3>🎯 Practice Exercises</h3>
+
+                    <div class="important">
+                        <h4>📝 Homework Preview Exercises</h4>
+                        <p>These exercises use the EXACT data structure you'll see in your homework. Do these in JASP for the best practice!</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Exercise 1: Independent T-Test Practice (Question 1 Structure)</h4>
+                        <p>Compare these two datasets (representing two different towns):</p>
+                        <table style="font-size: 0.85em;">
+                            <tr>
+                                <th>Town A</th>
+                                <td>1500</td><td>1200</td><td>1800</td><td>1350</td><td>1650</td><td>1400</td><td>1550</td>
+                            </tr>
+                            <tr>
+                                <th>Town B</th>
+                                <td>1700</td><td>1550</td><td>1900</td><td>1450</td><td>1650</td><td>1500</td><td>1750</td>
+                            </tr>
+                        </table>
+                        <p style="margin-top: 10px;"><strong>Tasks in JASP:</strong></p>
+                        <ul>
+                            <li>a) Run descriptives for both groups</li>
+                            <li>b) Run independent t-test</li>
+                            <li>c) Get 95% CI for the difference</li>
+                            <li>d) Test if Town B > Town A at α = 0.10</li>
+                        </ul>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Exercise 2: One-Sample T-Test Practice (Question 2 Structure)</h4>
+                        <p>Here are 14 test scores: 1050, 1100, 1150, 1075, 1125, 1090, 1140, 1080, 1110, 1095, 1130, 1085, 1120, 1105</p>
+                        <p><strong>In JASP:</strong></p>
+                        <ul>
+                            <li>a) Test if mean ≠ 1100 (α = 0.01)</li>
+                            <li>b) Test if mean < 1050 (α = 0.10) - SHOW ALL STEPS</li>
+                            <li>c) Would part (b) conclusion change at α = 0.05?</li>
+                            <li>d) Take screenshots of everything!</li>
+                        </ul>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Exercise 3: Chi-Square Practice (Question 3 Structure)</h4>
+                        <p>Create this contingency table in JASP:</p>
+                        <table style="font-size: 0.85em;">
+                            <tr><th>Group</th><th>Cat A</th><th>Cat B</th><th>Cat C</th></tr>
+                            <tr><td>Type 1</td><td>30</td><td>45</td><td>25</td></tr>
+                            <tr><td>Type 2</td><td>40</td><td>35</td><td>25</td></tr>
+                            <tr><td>Type 3</td><td>25</td><td>40</td><td>35</td></tr>
+                        </table>
+                        <p><strong>In JASP:</strong></p>
+                        <ul>
+                            <li>a) State hypotheses</li>
+                            <li>b) Decision rule for α = 0.05</li>
+                            <li>c) Run chi-square test</li>
+                            <li>d) Draw conclusion</li>
+                            <li>e) Would it change at α = 0.10?</li>
+                            <li>f) Screenshot everything!</li>
+                        </ul>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Exercise 4: Paired T-Test Practice (Question 4 Structure)</h4>
+                        <p>Same 10 people rated two products:</p>
+                        <table style="font-size: 0.85em;">
+                            <tr><th>Person</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th></tr>
+                            <tr><td>Product A</td><td>45</td><td>50</td><td>48</td><td>52</td><td>47</td><td>49</td><td>51</td><td>46</td><td>50</td><td>48</td></tr>
+                            <tr><td>Product B</td><td>55</td><td>58</td><td>52</td><td>60</td><td>54</td><td>57</td><td>59</td><td>53</td><td>56</td><td>55</td></tr>
+                        </table>
+                        <p><strong>In JASP:</strong></p>
+                        <ul>
+                            <li>a) Calculate 95% CI for (i) Product A and (ii) Product B means</li>
+                            <li>b) Test if the difference (B - A) equals 8 points (α = 0.05)</li>
+                        </ul>
+                    </div>
+
+                    <div class="tip">
+                        <h4>🎉 After These Exercises...</h4>
+                        <p>Move to the "Quiz Time!" tab to test your understanding before doing your real homework! 💪</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- QUIZ SECTION -->
+            <div id="quiz" class="section">
+                <div class="module">
+                    <h2>✅ Quiz Time! - Test Your Stats Skills</h2>
+                    
+                    <div class="analogy-box">
+                        <h4>🎯 Interactive Quiz!</h4>
+                        <p>Answer each question and click "Check Answer" to see if you got it right! The quiz will give you instant feedback and track your score. 💪</p>
+                        <p style="margin-top: 10px;"><strong>Instructions:</strong> Complete Part 1 conceptual questions first, then move to Part 2 JASP practice problems!</p>
+                    </div>
+
+                    <h3>📊 PART 1: Concept Check (30 points)</h3>
+
+                    <!-- Question 1 -->
+                    <div class="quiz-question">
+                        <h4>Question 1: Hypothesis Basics (3 points)</h4>
+                        <p>You want to test if average passenger wait time at Port Zante (15.5 minutes) is different from RLB Airport (14.2 minutes). You survey 20 passengers at each location.</p>
+                        
+                        <p style="margin-top: 15px;"><strong>(a) Should you use a paired or independent samples t-test?</strong></p>
+                        <div class="quiz-options">
+                            <div class="quiz-option">
+                                <input type="radio" name="q1a" id="q1a_paired" value="paired">
+                                <label for="q1a_paired">Paired samples t-test</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q1a" id="q1a_indep" value="independent">
+                                <label for="q1a_indep">Independent samples t-test</label>
+                            </div>
+                        </div>
+                        <button class="check-answer-btn" onclick="checkQ1a()">Check Answer</button>
+                        <div id="feedback-q1a" class="feedback"></div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="quiz-question">
+                        <h4>Question 2: P-Value Understanding (6 points)</h4>
+                        <p>You run a t-test comparing employee satisfaction in two SCASPA departments and get p = 0.023.</p>
+                        
+                        <p style="margin-top: 15px;"><strong>(a) If α = 0.05, what decision do you make about H₀?</strong></p>
+                        <div class="quiz-options">
+                            <div class="quiz-option">
+                                <input type="radio" name="q2a" id="q2a_reject" value="reject">
+                                <label for="q2a_reject">Reject H₀</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q2a" id="q2a_fail" value="fail">
+                                <label for="q2a_fail">Fail to reject H₀</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q2a" id="q2a_accept" value="accept">
+                                <label for="q2a_accept">Accept H₀</label>
+                            </div>
+                        </div>
+
+                        <p style="margin-top: 20px;"><strong>(b) Would your decision change if α = 0.01?</strong></p>
+                        <div class="quiz-options">
+                            <div class="quiz-option">
+                                <input type="radio" name="q2b" id="q2b_yes" value="yes">
+                                <label for="q2b_yes">Yes, decision would change</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q2b" id="q2b_no" value="no">
+                                <label for="q2b_no">No, decision would stay the same</label>
+                            </div>
+                        </div>
+                        <button class="check-answer-btn" onclick="checkQ2()">Check Answer</button>
+                        <div id="feedback-q2" class="feedback"></div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="quiz-question">
+                        <h4>Question 3: Test Selection (12 points)</h4>
+                        <p>Match each scenario with the appropriate statistical test:</p>
+                        
+                        <p style="margin-top: 15px;"><strong>(a) Testing if mean salary at SCASPA is greater than $45,000 (sample of 30 employees)</strong></p>
+                        <div class="quiz-options">
+                            <div class="quiz-option">
+                                <input type="radio" name="q3a" id="q3a_one" value="one-sample">
+                                <label for="q3a_one">One-sample t-test</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q3a" id="q3a_indep" value="independent">
+                                <label for="q3a_indep">Independent samples t-test</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q3a" id="q3a_paired" value="paired">
+                                <label for="q3a_paired">Paired samples t-test</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q3a" id="q3a_chi" value="chi-square">
+                                <label for="q3a_chi">Chi-square test</label>
+                            </div>
+                        </div>
+
+                        <p style="margin-top: 15px;"><strong>(b) Comparing monthly revenue at the airport for January 2025 vs. January 2024 (same months compared)</strong></p>
+                        <div class="quiz-options">
+                            <div class="quiz-option">
+                                <input type="radio" name="q3b" id="q3b_one" value="one-sample">
+                                <label for="q3b_one">One-sample t-test</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q3b" id="q3b_indep" value="independent">
+                                <label for="q3b_indep">Independent samples t-test</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q3b" id="q3b_paired" value="paired">
+                                <label for="q3b_paired">Paired samples t-test</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q3b" id="q3b_chi" value="chi-square">
+                                <label for="q3b_chi">Chi-square test</label>
+                            </div>
+                        </div>
+
+                        <p style="margin-top: 15px;"><strong>(c) Testing if there's a relationship between shift type (day/night) and transportation method (car/bus/walk/taxi)</strong></p>
+                        <div class="quiz-options">
+                            <div class="quiz-option">
+                                <input type="radio" name="q3c" id="q3c_one" value="one-sample">
+                                <label for="q3c_one">One-sample t-test</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q3c" id="q3c_indep" value="independent">
+                                <label for="q3c_indep">Independent samples t-test</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q3c" id="q3c_paired" value="paired">
+                                <label for="q3c_paired">Paired samples t-test</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q3c" id="q3c_chi" value="chi-square">
+                                <label for="q3c_chi">Chi-square test</label>
+                            </div>
+                        </div>
+
+                        <p style="margin-top: 15px;"><strong>(d) Customer service ratings BEFORE and AFTER training (same 15 employees rated both times)</strong></p>
+                        <div class="quiz-options">
+                            <div class="quiz-option">
+                                <input type="radio" name="q3d" id="q3d_one" value="one-sample">
+                                <label for="q3d_one">One-sample t-test</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q3d" id="q3d_indep" value="independent">
+                                <label for="q3d_indep">Independent samples t-test</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q3d" id="q3d_paired" value="paired">
+                                <label for="q3d_paired">Paired samples t-test</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q3d" id="q3d_chi" value="chi-square">
+                                <label for="q3d_chi">Chi-square test</label>
+                            </div>
+                        </div>
+                        <button class="check-answer-btn" onclick="checkQ3()">Check Answer</button>
+                        <div id="feedback-q3" class="feedback"></div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="quiz-question">
+                        <h4>Question 4: Confidence Interval Interpretation (5 points)</h4>
+                        <p>You calculate a 95% confidence interval for the difference in mean wait times (Airport - Seaport) and get: [-3.5, 1.2]</p>
+                        
+                        <p style="margin-top: 15px;"><strong>What does this interval tell you?</strong></p>
+                        <div class="quiz-options">
+                            <div class="quiz-option">
+                                <input type="radio" name="q4" id="q4a" value="a">
+                                <label for="q4a">Airport definitely has shorter wait times than Seaport</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q4" id="q4b" value="b">
+                                <label for="q4b">Seaport definitely has shorter wait times than Airport</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q4" id="q4c" value="c">
+                                <label for="q4c">The difference might be zero - we can't confidently say which is faster</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q4" id="q4d" value="d">
+                                <label for="q4d">The wait times are exactly the same</label>
+                            </div>
+                        </div>
+                        <button class="check-answer-btn" onclick="checkQ4()">Check Answer</button>
+                        <div id="feedback-q4" class="feedback"></div>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="quiz-question">
+                        <h4>Question 5: Hypothesis Writing (4 points)</h4>
+                        <p>You want to test if the mean customer satisfaction score at SCASPA is LESS than 8.0 (on a 10-point scale).</p>
+                        
+                        <p style="margin-top: 15px;"><strong>What is the null hypothesis?</strong></p>
+                        <div class="quiz-options">
+                            <div class="quiz-option">
+                                <input type="radio" name="q5" id="q5a" value="a">
+                                <label for="q5a">H₀: μ < 8.0</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q5" id="q5b" value="b">
+                                <label for="q5b">H₀: μ = 8.0 (or μ ≥ 8.0)</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q5" id="q5c" value="c">
+                                <label for="q5c">H₀: μ ≠ 8.0</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q5" id="q5d" value="d">
+                                <label for="q5d">H₀: μ > 8.0</label>
+                            </div>
+                        </div>
+                        <button class="check-answer-btn" onclick="checkQ5()">Check Answer</button>
+                        <div id="feedback-q5" class="feedback"></div>
+                    </div>
+
+                    <button class="submit-quiz-btn" onclick="calculateScore()">Submit Part 1 & See Your Score! 🎉</button>
+                    
+                    <div id="score-display" class="score-display">
+                        <h3>Your Part 1 Score:</h3>
+                        <div class="score-number" id="score-number">0/30</div>
+                        <div id="score-message"></div>
+                        <button class="reset-quiz-btn" onclick="resetQuiz()">Try Again</button>
+                    </div>
+
+                    <h3 style="margin-top: 50px;">📊 PART 2: JASP Practice Problems</h3>
+
+                    <div class="important">
+                        <h4>⚡ These Mirror Your Homework Questions!</h4>
+                        <p>Do these IN JASP for the best practice. The data and structure exactly match your homework assignment!</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>JASP Practice 1: Independent Samples T-Test (Like Question 1!)</h4>
+                        <p><strong>Scenario:</strong> A supervisor at SCASPA believes that average monthly overtime hours differ between Airport Operations and Seaport Operations employees. Random samples of 12 employees from each department show:</p>
+                        
+                        <table style="font-size: 0.9em;">
+                            <tr>
+                                <th colspan="12">Airport Operations (Monthly Overtime Hours)</th>
+                            </tr>
+                            <tr>
+                                <td>15</td><td>18</td><td>12</td><td>20</td><td>16</td><td>14</td><td>19</td><td>17</td><td>13</td><td>21</td><td>15</td><td>18</td>
+                            </tr>
+                        </table>
+
+                        <table style="font-size: 0.9em; margin-top: 10px;">
+                            <tr>
+                                <th colspan="12">Seaport Operations (Monthly Overtime Hours)</th>
+                            </tr>
+                            <tr>
+                                <td>22</td><td>19</td><td>25</td><td>21</td><td>23</td><td>20</td><td>24</td><td>18</td><td>22</td><td>26</td><td>21</td><td>23</td>
+                            </tr>
+                        </table>
+
+                        <ol class="step-list" style="font-size: 0.9em;">
+                            <li><strong>In JASP:</strong> Enter this data with two columns: "Overtime_Hours" and "Department"</li>
+                            <li><strong>Run descriptive statistics</strong> for each group. What are the means and SDs?</li>
+                            <li><strong>Should you use paired or independent t-test?</strong> Explain why.</li>
+                            <li><strong>Run the appropriate t-test</strong> with α = 0.05. What's your p-value?</li>
+                            <li><strong>Calculate a 95% confidence interval</strong> for the difference in means</li>
+                            <li><strong>Test at α = 0.10:</strong> Is there evidence that Seaport employees work more overtime than Airport employees? (One-tailed test!)</li>
+                            <li><strong>Take screenshots</strong> of your data entry, test setup, and output tables (practice for your homework!)</li>
+                        </ol>
+
+                        <div class="tip">
+                            <h4>💡 This is EXACTLY like Question 1!</h4>
+                            <p>Question 1 compares St. Georges vs. Grenville expenditures. This compares Airport vs. Seaport overtime. Same structure, same tests needed! If you can do this, you can do Question 1! ✅</p>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>JASP Practice 2: One-Sample T-Test (Like Question 2!)</h4>
+                        <p><strong>Scenario:</strong> The HR department believes the average employee satisfaction score at SCASPA is 7.5 out of 10. You survey 20 employees and get these scores:</p>
+                        
+                        <table style="font-size: 0.9em;">
+                            <tr>
+                                <td>8.2</td><td>7.1</td><td>6.9</td><td>7.8</td><td>8.5</td><td>7.3</td><td>6.8</td><td>7.9</td><td>8.1</td><td>7.4</td>
+                            </tr>
+                            <tr>
+                                <td>7.6</td><td>8.0</td><td>7.2</td><td>6.7</td><td>7.5</td><td>8.3</td><td>7.0</td><td>7.7</td><td>8.4</td><td>7.1</td>
+                            </tr>
+                        </table>
+
+                        <ol class="step-list" style="font-size: 0.9em;">
+                            <li><strong>Enter data in JASP</strong> in a single column called "Satisfaction"</li>
+                            <li><strong>Test the hypothesis</strong> that mean satisfaction is NOT equal to 7.5. Use α = 0.01. (Two-tailed test!)
+                                <ul style="list-style: none; margin-top: 5px;">
+                                    <li>• State H₀ and H₁</li>
+                                    <li>• Run one-sample t-test (test value = 7.5)</li>
+                                    <li>• Report t-statistic, df, and p-value</li>
+                                    <li>• Make decision and write conclusion</li>
+                                </ul>
+                            </li>
+                            <li><strong>Now test</strong> if mean satisfaction is LESS than 8.0. Use α = 0.10. (Left-tailed test!)
+                                <ul style="list-style: none; margin-top: 5px;">
+                                    <li>• Show ALL steps of hypothesis test</li>
+                                    <li>• In JASP, you'll need to select the correct tail direction!</li>
+                                </ul>
+                            </li>
+                            <li><strong>Would your conclusion</strong> from step 3 change if you used α = 0.05? Explain.</li>
+                        </ol>
+
+                        <div class="tip">
+                            <h4>💡 This is EXACTLY like Question 2!</h4>
+                            <p>Question 2 tests SAT scores against specific values (1100 and 950). This tests satisfaction scores against specific values (7.5 and 8.0). Same type of test, same approach! ✅</p>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>JASP Practice 3: Chi-Square Test (Like Question 3!)</h4>
+                        <p><strong>Scenario:</strong> SCASPA wants to know if there's a relationship between employee position and preferred communication method. They surveyed 400 employees with these results:</p>
+                        
+                        <table>
+                            <tr>
+                                <th>Position</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>In-Person</th>
+                                <th>Text/Chat</th>
+                            </tr>
+                            <tr>
+                                <td>Management</td>
+                                <td>45</td>
+                                <td>25</td>
+                                <td>15</td>
+                                <td>15</td>
+                            </tr>
+                            <tr>
+                                <td>Supervisors</td>
+                                <td>30</td>
+                                <td>35</td>
+                                <td>20</td>
+                                <td>15</td>
+                            </tr>
+                            <tr>
+                                <td>Technical Staff</td>
+                                <td>25</td>
+                                <td>20</td>
+                                <td>15</td>
+                                <td>40</td>
+                            </tr>
+                            <tr>
+                                <td>Support Staff</td>
+                                <td>20</td>
+                                <td>30</td>
+                                <td>35</td>
+                                <td>15</td>
+                            </tr>
+                        </table>
+
+                        <ol class="step-list" style="font-size: 0.9em;">
+                            <li><strong>State null and alternative hypotheses</strong></li>
+                            <li><strong>Provide the decision rule</strong> at α = 0.05</li>
+                            <li><strong>Enter data in JASP</strong>
+                                <ul style="list-style: none; margin-top: 5px;">
+                                    <li>• You can enter this as raw data OR as a frequency table</li>
+                                    <li>• Set up contingency table: Position (rows) × Communication Method (columns)</li>
+                                </ul>
+                            </li>
+                            <li><strong>Run chi-square test</strong> and show all necessary calculations/output</li>
+                            <li><strong>What conclusion</strong> can you draw? State it in context!</li>
+                            <li><strong>Would your conclusion change</strong> at α = 0.10? Explain.</li>
+                            <li><strong>Save screenshots</strong> of input and output tables</li>
+                        </ol>
+
+                        <div class="tip">
+                            <h4>💡 This is EXACTLY like Question 3!</h4>
+                            <p>Question 3 tests Position vs. Smoking Habits. This tests Position vs. Communication Method. Same contingency table structure, same chi-square test! ✅</p>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>JASP Practice 4: Paired T-Test (Like Question 4!)</h4>
+                        <p><strong>Scenario:</strong> A bakery at the airport terminal wants to test two coffee blends. They have 10 taste-testers rate both blends on a scale of 0-100 for flavor intensity:</p>
+                        
+                        <table style="font-size: 0.9em;">
+                            <tr>
+                                <th>Tester</th>
+                                <th>1</th>
+                                <th>2</th>
+                                <th>3</th>
+                                <th>4</th>
+                                <th>5</th>
+                                <th>6</th>
+                                <th>7</th>
+                                <th>8</th>
+                                <th>9</th>
+                                <th>10</th>
+                            </tr>
+                            <tr>
+                                <td><strong>Current Blend</strong></td>
+                                <td>72</td>
+                                <td>68</td>
+                                <td>75</td>
+                                <td>70</td>
+                                <td>73</td>
+                                <td>69</td>
+                                <td>71</td>
+                                <td>74</td>
+                                <td>72</td>
+                                <td>70</td>
+                            </tr>
+                            <tr>
+                                <td><strong>New Blend</strong></td>
+                                <td>78</td>
+                                <td>82</td>
+                                <td>80</td>
+                                <td>75</td>
+                                <td>79</td>
+                                <td>81</td>
+                                <td>77</td>
+                                <td>83</td>
+                                <td>80</td>
+                                <td>78</td>
+                            </tr>
+                        </table>
+
+                        <ol class="step-list" style="font-size: 0.9em;">
+                            <li><strong>Calculate 95% confidence intervals</strong> for the mean flavor intensity of:
+                                <ul style="list-style: none; margin-top: 5px;">
+                                    <li>(i) Current blend</li>
+                                    <li>(ii) New blend</li>
+                                </ul>
+                            </li>
+                            <li><strong>Test the hypothesis</strong> that the difference in mean flavor (New - Current) is equal to 8 points. Use α = 0.05.
+                                <ul style="list-style: none; margin-top: 5px;">
+                                    <li>• Hint: Create a "Difference" column in JASP!</li>
+                                    <li>• Run one-sample t-test on the differences, test value = 8</li>
+                                    <li>• Show all steps!</li>
+                                </ul>
+                            </li>
+                        </ol>
+
+                        <div class="tip">
+                            <h4>💡 This is EXACTLY like Question 4!</h4>
+                            <p>Question 4 tests cheesecake sweetness ratings (existing vs. new recipe). This tests coffee blend ratings (current vs. new). Both are paired data from the same people rating two things! ✅</p>
+                        </div>
+                    </div>
+
+                    <h3>🎯 PART 3: JASP Screenshot Practice</h3>
+
+                    <div class="important">
+                        <h4>📸 Essential Skill for Questions 1e, 2d, and 3f!</h4>
+                        <p>Your homework requires you to provide JASP screenshots. Practice this NOW!</p>
+                    </div>
+
+                    <div class="concept-box">
+                        <h4>Screenshot Checklist</h4>
+                        <p>For Practice Problem 1 (overtime hours), take these screenshots:</p>
+                        
+                        <ol>
+                            <li>✅ <strong>Data View:</strong> Show your data entry with both columns visible</li>
+                            <li>✅ <strong>Test Setup:</strong> Show the T-Tests menu with your variable selections</li>
+                            <li>✅ <strong>Descriptives Table:</strong> Show the group statistics (means, SDs)</li>
+                            <li>✅ <strong>T-Test Output:</strong> Show the independent samples t-test results table</li>
+                            <li>✅ <strong>Confidence Interval:</strong> Make sure the CI is visible in output</li>
+                        </ol>
+
+                        <div class="tip">
+                            <h4>💡 Screenshot Tips</h4>
+                            <ul>
+                                <li><strong>Windows:</strong> Press Win + Shift + S to take a snip</li>
+                                <li><strong>Mac:</strong> Press Cmd + Shift + 4 to select area</li>
+                                <li>Make sure all important values are clearly visible!</li>
+                                <li>Paste directly into a Word document</li>
+                                <li>Label each screenshot (e.g., "Figure 1: Data Entry")</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="analogy-box" style="margin-top: 30px;">
+                        <h4>🚀 Ready for Your Homework?</h4>
+                        <p>If you scored well on Part 1 and completed the JASP practice problems, you're 100% ready to tackle your assignment! Every question type has been covered. You've got this, Janelle! 🌟</p>
+                        <p style="margin-top: 10px;"><strong>Next step:</strong> Click the "Your Assignment" tab and let's connect everything you learned to your actual homework questions!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HOMEWORK SECTION -->
+            <div id="homework" class="section">
+                <div class="module">
+                    <h2>📝 Your Assignment - Connecting It All!</h2>
+
+                    <div class="important">
+                        <h4>🎯 Overview</h4>
+                        <p>You have 4 questions testing different concepts. Let's break down EXACTLY what each one needs!</p>
+                    </div>
+
+                    <h3>Question 1: St. Georges vs. Grenville Expenditure</h3>
+
+                    <div class="concept-box">
+                        <h4>📊 The Setup</h4>
+                        <p>You have monthly expenditure data for 14 families in each town.</p>
+                        <p><strong>This is:</strong> Independent samples (two different groups of families)</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Part (a) - 3 marks: Which test to use?</h4>
+                        <p><strong>What they want:</strong> Should we use paired or independent t-test?</p>
+                        
+                        <p style="margin-top: 15px;"><strong>Your answer should say:</strong></p>
+                        <ul>
+                            <li>✅ "An <strong>independent samples t-test</strong> is most appropriate"</li>
+                            <li>✅ "This is because we are comparing two SEPARATE groups of families (St. Georges vs. Grenville)"</li>
+                            <li>✅ "The families are not related to each other - they're different people in different towns"</li>
+                        </ul>
+
+                        <div class="tip">
+                            <h4>💡 Why NOT paired?</h4>
+                            <p>Paired would be if you measured the SAME families twice (e.g., their spending in January vs. February). But these are completely different families!</p>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Part (b) - 5 marks: Test if mean < 1200 in St. Georges</h4>
+                        <p><strong>What they want:</strong> One-sample t-test (comparing to a specific value: 1200)</p>
+                        
+                        <ol class="step-list" style="font-size: 0.95em;">
+                            <li>Calculate mean and SD for St. Georges data (JASP does this)</li>
+                            <li>Write hypotheses:
+                                <ul style="list-style: none;">
+                                    <li>H₀: μ = 1200</li>
+                                    <li>H₁: μ < 1200 (LEFT-TAILED test!)</li>
+                                </ul>
+                            </li>
+                            <li>Set α = 0.01 (1% level - they told you!)</li>
+                            <li>Run one-sample t-test in JASP (test value = 1200)</li>
+                            <li>Get p-value, make decision</li>
+                            <li>Write conclusion: "There is [sufficient/insufficient] evidence at the 1% significance level to conclude that mean expenditure in St. Georges is less than $1200"</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Part (c) - 5 marks: 95% Confidence Interval for difference</h4>
+                        <p><strong>What they want:</strong> CI for (St. Georges mean - Grenville mean)</p>
+                        
+                        <ol class="step-list" style="font-size: 0.95em;">
+                            <li>Run independent samples t-test in JASP</li>
+                            <li>Check the confidence interval output</li>
+                            <li>Report it: "The 95% confidence interval for the difference in mean expenditure is [lower bound, upper bound]"</li>
+                            <li>Interpret: "We are 95% confident that the true difference in mean expenditure between St. Georges and Grenville is between $X and $Y"</li>
+                        </ol>
+
+                        <div class="tip">
+                            <h4>🔍 What if the CI includes zero?</h4>
+                            <p>If your interval is something like [-50, 150], it means the difference could be negative, zero, or positive. This suggests the expenditures might NOT be significantly different!</p>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Part (d) - 5 marks: Test if Grenville > St. Georges</h4>
+                        <p><strong>What they want:</strong> Independent samples t-test (one-tailed)</p>
+                        
+                        <p><strong>Hypotheses:</strong></p>
+                        <ul>
+                            <li>H₀: μ_Grenville ≤ μ_StGeorges</li>
+                            <li>H₁: μ_Grenville > μ_StGeorges (RIGHT-TAILED!)</li>
+                        </ul>
+
+                        <p style="margin-top: 10px;">α = 0.10 (10% level)</p>
+
+                        <div class="important">
+                            <h4>⚡ Key Point!</h4>
+                            <p>This is the OPPOSITE direction from part (b)! Part (b) tested if St. Georges < 1200. This tests if Grenville > St. Georges.</p>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Part (e) - 2 marks: Confirm with JASP</h4>
+                        <p><strong>What they want:</strong> Screenshots/printouts of your JASP input and output!</p>
+                        
+                        <p><strong>You need to show:</strong></p>
+                        <ul>
+                            <li>✅ Data entry screen (showing your data)</li>
+                            <li>✅ Test selection screen (showing which test you chose)</li>
+                            <li>✅ Output tables (showing your results)</li>
+                        </ul>
+                    </div>
+
+                    <h3 style="margin-top: 40px;">Question 2: SAT Scores</h3>
+
+                    <div class="concept-box">
+                        <h4>📊 The Setup</h4>
+                        <p>28 students, SAT scores given. Test if mean = 1100.</p>
+                        <p><strong>This is:</strong> One-sample t-test</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Part (a) - 5 marks: Test if mean ≠ 1100</h4>
+                        <p><strong>TWO-TAILED test</strong> (≠ means "not equal to")</p>
+                        
+                        <ul>
+                            <li>H₀: μ = 1100</li>
+                            <li>H₁: μ ≠ 1100</li>
+                            <li>α = 0.01 (1% level)</li>
+                        </ul>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Part (b) - 5 marks: Test if mean < 950</h4>
+                        <p><strong>LEFT-TAILED test</strong></p>
+                        
+                        <ul>
+                            <li>H₀: μ = 950 (or μ ≥ 950)</li>
+                            <li>H₁: μ < 950</li>
+                            <li>α = 0.10 (10% level)</li>
+                            <li><strong>SHOW ALL STEPS!</strong> - They want the complete process written out</li>
+                        </ul>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Part (c) - 2 marks: Would conclusion change at 5%?</h4>
+                        <p><strong>What they want:</strong> Compare your p-value from part (b) to α = 0.05</p>
+                        
+                        <div class="tip">
+                            <h4>💡 Think About It</h4>
+                            <p>If your p-value was 0.08:</p>
+                            <ul>
+                                <li>At α = 0.10: 0.08 < 0.10 → Reject H₀</li>
+                                <li>At α = 0.05: 0.08 > 0.05 → Fail to reject H₀</li>
+                                <li>YES, conclusion would change!</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 40px;">Question 3: Smoking Habits</h3>
+
+                    <div class="concept-box">
+                        <h4>📊 The Setup</h4>
+                        <p>Contingency table: Position vs. Smoking Habits</p>
+                        <p><strong>This is:</strong> Chi-Square Test of Independence</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>All Parts Together</h4>
+                        
+                        <p><strong>Part (a) - Hypotheses:</strong></p>
+                        <ul>
+                            <li>H₀: Position and smoking habits are independent (no relationship)</li>
+                            <li>H₁: Position and smoking habits are dependent (there IS a relationship)</li>
+                        </ul>
+
+                        <p style="margin-top: 15px;"><strong>Part (b) - Decision Rule:</strong></p>
+                        <p>α = 0.05, so reject H₀ if p-value < 0.05</p>
+
+                        <p style="margin-top: 15px;"><strong>Part (c) - Show work:</strong></p>
+                        <p>You'll need to show the chi-square calculation (but JASP does this!)</p>
+
+                        <p style="margin-top: 15px;"><strong>Part (d) - Conclusion:</strong></p>
+                        <p>"Based on the chi-square test results [state if you rejected or failed to reject H₀], there is [sufficient/insufficient] evidence to conclude a relationship exists between job position and smoking habits among the 5000 employees."</p>
+
+                        <p style="margin-top: 15px;"><strong>Part (e) - Would it change at 10%?</strong></p>
+                        <p>Compare your p-value to α = 0.10 instead</p>
+                    </div>
+
+                    <h3 style="margin-top: 40px;">Question 4: Cheesecake Sweetness</h3>
+
+                    <div class="concept-box">
+                        <h4>📊 The Setup</h4>
+                        <p>12 people rate BOTH recipes (existing AND new)</p>
+                        <p><strong>This is:</strong> Paired samples t-test!</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Part (a) - 6 marks: Confidence Intervals</h4>
+                        <p>Calculate 95% CI for EACH recipe separately (not the difference!)</p>
+                        
+                        <div class="formula">
+                            CI = mean ± (t-critical × SE)
+                            
+                            JASP will calculate this in "Descriptives"
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Part (b) - 5 marks: Test if difference = 40</h4>
+                        <p><strong>Tricky part!</strong> They want to test if the DIFFERENCE is 40.</p>
+                        
+                        <ul>
+                            <li>H₀: μ_difference = 40</li>
+                            <li>H₁: μ_difference ≠ 40</li>
+                            <li>α = 0.05</li>
+                        </ul>
+
+                        <div class="tip">
+                            <h4>💡 How to do this in JASP</h4>
+                            <p>Create a new column: Difference = New Recipe - Existing Recipe</p>
+                            <p>Then run a ONE-SAMPLE t-test on this difference column, testing against μ = 40</p>
+                        </div>
+                    </div>
+
+                    <div class="important">
+                        <h4>🎯 General Tips for ALL Questions</h4>
+                        <ul>
+                            <li>✅ Always state hypotheses clearly</li>
+                            <li>✅ Always reference the significance level in your conclusion</li>
+                            <li>✅ Write conclusions in context (don't just say "reject H₀"!)</li>
+                            <li>✅ For JASP questions: Take clear screenshots of EVERYTHING</li>
+                            <li>✅ Show your work even when JASP calculates it</li>
+                        </ul>
+                    </div>
+
+                    <div class="analogy-box" style="margin-top: 30px;">
+                        <h4>🚀 Ready to Start?</h4>
+                        <p>Janelle, you've learned the concepts, practiced with JASP, and taken the quiz. Now it's time to show what you know! 💪</p>
+                        <p style="margin-top: 10px;">Remember: You're not just doing this assignment - you're building skills that will serve you throughout your Psychology degree and your career at SCASPA. Tyler's watching his amazing mom conquer challenges! 🌟</p>
+                        <p style="margin-top: 10px;"><strong>You've got this!</strong> And if you get stuck, come back to this guide - everything you need is here!</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <h3>🎉 You're Ready to Conquer Stats! 🎉</h3>
+            <p style="margin-top: 15px;">Remember, Janelle: Every statistician started where you are now. Stats isn't about being a math genius - it's about being curious, asking good questions, and being willing to learn!</p>
+            <p style="margin-top: 10px;">You're doing this for Tyler, for yourself, and for your future in psychology. You've got this! 💪✨</p>
+            <p style="margin-top: 20px; font-size: 0.9em;">Made with ❤️ for the most ambitious HR professional at SCASPA!</p>
+            <p style="font-size: 0.9em;">Questions? Your friend Enoete has your back! 😊</p>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.nav-tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Quiz functionality
+        let quizScore = 0;
+        let questionsAnswered = 0;
+        const totalQuestions = 9;
+
+        function checkAnswer(questionNum, correctAnswer, isText = false) {
+            const selectedAnswer = isText ? 
+                document.querySelector(`#q${questionNum}-answer`).value.trim().toLowerCase() :
+                document.querySelector(`input[name="q${questionNum}"]:checked`)?.value;
+
+            const feedbackDiv = document.getElementById(`feedback${questionNum}`);
+            const checkBtn = document.querySelector(`#check-btn-${questionNum}`);
+            
+            if (!selectedAnswer) {
+                alert("Janelle! I know you're impatient, but you gotta select an answer first! 😊");
+                return;
+            }
+
+            // Disable button and inputs after checking
+            checkBtn.disabled = true;
+            if (!isText) {
+                document.querySelectorAll(`input[name="q${questionNum}"]`).forEach(input => {
+                    input.disabled = true;
+                    const label = input.parentElement;
+                    if (input.value === correctAnswer) {
+                        label.classList.add('correct');
+                    } else if (input.checked) {
+                        label.classList.add('incorrect');
+                    }
+                });
+            }
+
+            const isCorrect = isText ? 
+                selectedAnswer.includes(correctAnswer.toLowerCase()) :
+                selectedAnswer === correctAnswer;
+
+            if (isCorrect) {
+                quizScore++;
+                feedbackDiv.className = 'feedback correct';
+                feedbackDiv.innerHTML = getCorrectFeedback(questionNum);
+            } else {
+                feedbackDiv.className = 'feedback incorrect';
+                feedbackDiv.innerHTML = getIncorrectFeedback(questionNum, correctAnswer);
+            }
+
+            questionsAnswered++;
+            updateProgress();
+        }
+
+        function getCorrectFeedback(questionNum) {
+            const responses = [
+                "🎉 Yes! You got it! Independent t-test because these are two different groups!",
+                "✅ Perfect! Reject H₀ when p < α!",
+                "🌟 Exactly right! One-sample t-test for comparing to a specific value!",
+                "💯 You're crushing this! Two-tailed test (≠) means could be different in either direction!",
+                "🎯 Spot on! p = 0.023 is less than 0.05, so we reject H₀!",
+                "⭐ Correct! Chi-square tests relationships between categorical variables!",
+                "🚀 Brilliant! Paired t-test for same people measured twice!",
+                "👏 Yes! We're 95% confident the true value is in that interval!",
+                "🏆 Perfect! You're understanding this better than most stats students!"
+            ];
+            return responses[Math.min(questionNum - 1, responses.length - 1)];
+        }
+
+        function getIncorrectFeedback(questionNum, correctAnswer) {
+            const feedbacks = {
+                1: "Not quite! Think about it: these are TWO DIFFERENT groups of passengers (one from Port, one from Airport). That means INDEPENDENT t-test! If it was the SAME passengers measured twice, then it would be paired.",
+                2: "Close! When p-value (0.023) is LESS than α (0.05), we REJECT H₀. Think: p is low, H₀ must go!",
+                3: "Hmm, not this time! We're comparing our SAMPLE to a SPECIFIC number (45,000). That's a ONE-SAMPLE t-test!",
+                4: "Not quite! The symbol ≠ means 'not equal to' - we don't know if it's higher OR lower, just DIFFERENT. That's a TWO-TAILED test!",
+                5: "Think again! Is 0.023 less than 0.01? Nope! So we can't reject at that stricter level. The decision WOULD change!",
+                6: "Not this one! We're looking at CATEGORIES (shift type × transportation). That means CHI-SQUARE test!",
+                7: "Try again! These are the SAME 15 employees rated twice (before and after). Same people = PAIRED t-test!",
+                8: "Not quite! A confidence interval gives us a RANGE of plausible values, not just one number!",
+                9: `Oops! The correct answer involves: ${correctAnswer}. Review that section and try again!`
+            };
+            return feedbacks[questionNum] || `Not quite! The correct answer is ${correctAnswer}. Review that concept!`;
+        }
+
+        function updateProgress() {
+            if (questionsAnswered === totalQuestions) {
+                showFinalScore();
+            }
+        }
+
+        function showFinalScore() {
+            const percentage = Math.round((quizScore / totalQuestions) * 100);
+            const scoreDiv = document.getElementById('final-score');
+            let message = '';
+            let emoji = '';
+
+            if (percentage >= 90) {
+                emoji = '🏆🎉🌟';
+                message = `AMAZING, JANELLE! ${quizScore}/${totalQuestions} (${percentage}%)! You're absolutely READY for your homework! Tyler would be so proud! Go crush that assignment!`;
+            } else if (percentage >= 80) {
+                emoji = '🎉✨';
+                message = `Great job, Janelle! ${quizScore}/${totalQuestions} (${percentage}%)! You're definitely ready! Maybe review the ones you missed, then go ace that homework!`;
+            } else if (percentage >= 70) {
+                emoji = '💪📚';
+                message = `Good effort! ${quizScore}/${totalQuestions} (${percentage}%). You're getting there! I know you're impatient, but spend 10 more minutes reviewing the topics you missed, then you'll be golden!`;
+            } else {
+                emoji = '📖🔄';
+                message = `${quizScore}/${totalQuestions} (${percentage}%). Hey, everyone starts somewhere! Go back through the learning tabs, take your time (I know, I know, patience isn't your thing! 😊), then come back and try again. You've got this!`;
+            }
+
+            scoreDiv.innerHTML = `
+                <div style="font-size: 3em; margin-bottom: 20px;">${emoji}</div>
+                <div style="font-size: 1.3em; margin-bottom: 10px;">Quiz Complete!</div>
+                <div style="font-size: 2em; margin: 20px 0;">Score: ${quizScore}/${totalQuestions}</div>
+                <div style="font-size: 1.1em; line-height: 1.6;">${message}</div>
+            `;
+            scoreDiv.classList.add('show');
+            
+            window.scrollTo({ top: scoreDiv.offsetTop - 100, behavior: 'smooth' });
+        }
+
+        function resetQuiz() {
+            quizScore = 0;
+            questionsAnswered = 0;
+            
+            // Reset all inputs and feedback
+            for (let i = 1; i <= totalQuestions; i++) {
+                const feedbackDiv = document.getElementById(`feedback${i}`);
+                if (feedbackDiv) {
+                    feedbackDiv.className = 'feedback';
+                    feedbackDiv.style.display = 'none';
+                }
+                
+                const checkBtn = document.querySelector(`#check-btn-${i}`);
+                if (checkBtn) {
+                    checkBtn.disabled = false;
+                }
+                
+                const inputs = document.querySelectorAll(`input[name="q${i}"]`);
+                inputs.forEach(input => {
+                    input.checked = false;
+                    input.disabled = false;
+                    input.parentElement.classList.remove('correct', 'incorrect');
+                });
+
+                const textInput = document.querySelector(`#q${i}-answer`);
+                if (textInput) {
+                    textInput.value = '';
+                }
+            }
+            
+            const scoreDiv = document.getElementById('final-score');
+            scoreDiv.classList.remove('show');
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showAllAnswers() {
+            const answerKey = document.getElementById('answer-key-section');
+            answerKey.style.display = 'block';
+            window.scrollTo({ top: answerKey.offsetTop - 100, behavior: 'smooth' });
+        }
+
+        // Individual question check functions
+        function checkQ1a() {
+            const selected = document.querySelector('input[name="q1a"]:checked');
+            const feedback = document.getElementById('feedback-q1a');
+            
+            if (!selected) {
+                alert("Janelle! I know you're impatient, but you gotta select an answer first! 😊");
+                return;
+            }
+
+            const btn = event.target;
+            btn.disabled = true;
+            
+            document.querySelectorAll('input[name="q1a"]').forEach(input => {
+                input.disabled = true;
+                const parent = input.closest('.quiz-option');
+                if (input.value === 'independent') {
+                    parent.classList.add('correct');
+                } else if (input.checked) {
+                    parent.classList.add('incorrect');
+                }
+            });
+
+            if (selected.value === 'independent') {
+                feedback.className = 'feedback correct';
+                feedback.innerHTML = "🎉 YES! Independent t-test because you're comparing TWO DIFFERENT GROUPS of passengers - one from Port Zante, one from RLB Airport. They're not the same people!";
+            } else {
+                feedback.className = 'feedback incorrect';
+                feedback.innerHTML = "Not quite! These are TWO DIFFERENT groups of people. If it was the SAME passengers measured at both locations, THEN it would be paired. Different people = Independent!";
+            }
+        }
+
+        function checkQ2() {
+            const selectedA = document.querySelector('input[name="q2a"]:checked');
+            const selectedB = document.querySelector('input[name="q2b"]:checked');
+            const feedback = document.getElementById('feedback-q2');
+            
+            if (!selectedA || !selectedB) {
+                alert("Answer both parts (a) and (b) before checking! I know waiting is hard! 😊");
+                return;
+            }
+
+            const btn = event.target;
+            btn.disabled = true;
+            
+            // Check part (a)
+            document.querySelectorAll('input[name="q2a"]').forEach(input => {
+                input.disabled = true;
+                const parent = input.closest('.quiz-option');
+                if (input.value === 'reject') {
+                    parent.classList.add('correct');
+                } else if (input.checked) {
+                    parent.classList.add('incorrect');
+                }
+            });
+
+            // Check part (b)
+            document.querySelectorAll('input[name="q2b"]').forEach(input => {
+                input.disabled = true;
+                const parent = input.closest('.quiz-option');
+                if (input.value === 'yes') {
+                    parent.classList.add('correct');
+                } else if (input.checked) {
+                    parent.classList.add('incorrect');
+                }
+            });
+
+            if (selectedA.value === 'reject' && selectedB.value === 'yes') {
+                feedback.className = 'feedback correct';
+                feedback.innerHTML = "💯 PERFECT! (a) p = 0.023 < 0.05, so REJECT H₀! (b) But 0.023 > 0.01, so at the stricter level you'd FAIL to reject. Decision changes!";
+            } else if (selectedA.value === 'reject' && selectedB.value !== 'yes') {
+                feedback.className = 'feedback incorrect';
+                feedback.innerHTML = "(a) is correct! But for (b): Is 0.023 less than 0.01? NOPE! So yes, your decision WOULD change at that stricter significance level.";
+            } else if (selectedA.value !== 'reject' && selectedB.value === 'yes') {
+                feedback.className = 'feedback incorrect';
+                feedback.innerHTML = "(b) is correct! But for (a): When p-value (0.023) is LESS than α (0.05), you REJECT H₀. Remember: p is low, H₀ must go!";
+            } else {
+                feedback.className = 'feedback incorrect';
+                feedback.innerHTML = "Not quite on either! (a) p=0.023 < 0.05 so REJECT. (b) But 0.023 > 0.01 so decision would change at that stricter level!";
+            }
+        }
+
+        function checkQ3() {
+            const answers = {
+                'q3a': 'one-sample',
+                'q3b': 'paired',
+                'q3c': 'chi-square',
+                'q3d': 'paired'
+            };
+
+            let allCorrect = true;
+            let allAnswered = true;
+
+            for (let q in answers) {
+                const selected = document.querySelector(`input[name="${q}"]:checked`);
+                if (!selected) {
+                    allAnswered = false;
+                    break;
+                }
+                
+                const parent = selected.closest('.quiz-option');
+                const correctAnswer = answers[q];
+                
+                document.querySelectorAll(`input[name="${q}"]`).forEach(input => {
+                    input.disabled = true;
+                    const p = input.closest('.quiz-option');
+                    if (input.value === correctAnswer) {
+                        p.classList.add('correct');
+                    } else if (input.checked) {
+                        p.classList.add('incorrect');
+                        allCorrect = false;
+                    }
+                });
+            }
+
+            if (!allAnswered) {
+                alert("Answer ALL four parts (a-d) before checking! Patience, Janelle! 😊");
+                return;
+            }
+
+            const btn = event.target;
+            btn.disabled = true;
+            const feedback = document.getElementById('feedback-q3');
+
+            if (allCorrect) {
+                feedback.className = 'feedback correct';
+                feedback.innerHTML = "🏆 AMAZING! All 4 correct! (a) One-sample (vs. $45k), (b) Paired (same airport, different times), (c) Chi-square (categorical!), (d) Paired (same employees)!";
+            } else {
+                feedback.className = 'feedback incorrect';
+                feedback.innerHTML = "Not all correct! Check the highlighted answers. Remember: One-sample = vs. specific value; Independent = 2 different groups; Paired = same subjects twice; Chi-square = categorical variables!";
+            }
+        }
+
+        function checkQ4() {
+            const selected = document.querySelector('input[name="q4"]:checked');
+            const feedback = document.getElementById('feedback-q4');
+            
+            if (!selected) {
+                alert("Select an answer first! I know, waiting is the worst! 😊");
+                return;
+            }
+
+            const btn = event.target;
+            btn.disabled = true;
+            
+            document.querySelectorAll('input[name="q4"]').forEach(input => {
+                input.disabled = true;
+                const parent = input.closest('.quiz-option');
+                if (input.value === 'two-tailed') {
+                    parent.classList.add('correct');
+                } else if (input.checked) {
+                    parent.classList.add('incorrect');
+                }
+            });
+
+            if (selected.value === 'two-tailed') {
+                feedback.className = 'feedback correct';
+                feedback.innerHTML = "✨ YES! The ≠ symbol means 'not equal to' - could be higher OR lower than 1100. That's a TWO-TAILED test!";
+            } else {
+                feedback.className = 'feedback incorrect';
+                feedback.innerHTML = "Not quite! When you're testing if something is just DIFFERENT (≠), not specifically higher or lower, it's TWO-TAILED. Left-tailed is <, right-tailed is >.";
+            }
+        }
+
+        function checkQ5() {
+            const selected = document.querySelector('input[name="q5"]:checked');
+            const feedback = document.getElementById('feedback-q5');
+            
+            if (!selected) {
+                alert("Pick an answer! Quick! (I know you want to!) 😊");
+                return;
+            }
+
+            const btn = event.target;
+            btn.disabled = true;
+            
+            document.querySelectorAll('input[name="q5"]').forEach(input => {
+                input.disabled = true;
+                const parent = input.closest('.quiz-option');
+                if (input.value === 'yes') {
+                    parent.classList.add('correct');
+                } else if (input.checked) {
+                    parent.classList.add('incorrect');
+                }
+            });
+
+            if (selected.value === 'yes') {
+                feedback.className = 'feedback correct';
+                feedback.innerHTML = "🎯 CORRECT! At α=0.05, we reject (0.023 < 0.05). But at α=0.01, we FAIL to reject (0.023 > 0.01). Decision changes!";
+            } else {
+                feedback.className = 'feedback incorrect';
+                feedback.innerHTML = "Think again! At 0.05 level: reject (since 0.023 < 0.05). At 0.01 level: fail to reject (since 0.023 > 0.01). Different decisions!";
+            }
+        }
+    </script>
+</body>
+</html>
